@@ -1,0 +1,56 @@
+/* src/styles/global.css */
+
+/* Color Variables */
+:root {
+  --primary-color: #9a0002; /* Cherry Red */
+  --secondary-color: #ffffff; /* White */
+  --text-color: #222; /* Dark gray text */
+  --subtitle-color:#555;
+  --navbar-color: rgba(210, 4, 45, 0.9); /* Cherry red with transparency */
+  --btn-bg-hover-color: #88011a; /* Darker cherry for hover */
+}
+
+/* Global Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+
+  /* Remove flex centering */
+  display: block;
+}
+  
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Global container utility */
+.container {
+  max-width: 1200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 80vh; /* or whatever */
+}
+

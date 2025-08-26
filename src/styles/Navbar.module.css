@@ -1,0 +1,136 @@
+/* ------------------ Navbar ------------------ */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s ease, height 0.3s ease;
+}
+
+/* Scroll effect */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.7);
+  height: 60px;
+}
+
+/* ------------------ Logo ------------------ */
+.logo h2 {
+  color: var(--primary-color, #444);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo h2:hover {
+  color: var(--btn-bg-hover-color);
+}
+
+/* ------------------ Menu ------------------ */
+.menu {
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuItem a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.menuItem a:hover {
+  color: var(--btn-bg-hover-color);
+}
+
+.menuItem a.active {
+  color: var(--btn-bg-hover-color);
+  font-weight: 600;
+}
+
+/* ------------------ Hamburger ------------------ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  transition: transform 0.3s ease;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background: #444;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger into X */
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ------------------ Mobile Menu ------------------ */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    border: none;
+  }
+/* also explicitly remove outline/border on focus & active */
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menuItem a {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+}
