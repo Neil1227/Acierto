@@ -25,7 +25,7 @@ body {
   background: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
-
+  padding-top: 70px; /* same as .navbar height */
   /* Remove flex centering */
   display: block;
 }
@@ -52,5 +52,71 @@ a {
   flex-direction: column;
   text-align: center;
   min-height: 80vh; /* or whatever */
+}
+/* ------------------ Preloader Base ------------------ */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--body-color, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Container for rings */
+.chart-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+/* Semi-circle ring base style */
+.semi-circle-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+/* Outer semi-circle ring */
+.outer-ring {
+  border-color: var(--tertiary-color, #ff4d4d);
+  animation: rotate-outer-ring 5s linear infinite;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 80%, 0% 100%);
+}
+
+/* Inner semi-circle ring */
+.inner-ring {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-color: var(--primary-color, #a50321);
+  animation: rotate-inner-ring 5s linear infinite;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 80%, 0% 100%);
+}
+
+/* Animations */
+@keyframes rotate-outer-ring {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-inner-ring {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
 }
 

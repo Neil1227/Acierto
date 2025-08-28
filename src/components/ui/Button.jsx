@@ -1,20 +1,8 @@
-// src/components/Button.tsx
+// src/components/Button.jsx
 import React from "react";
-import styles from "../styles/Button.module.css";
+import styles from "../../styles/Button.module.css";
 
-interface ButtonProps {
-  variant?: "primary" | "outline" | "secondary";
-  size?: "sm" | "md" | "lg";
-  href?: string;
-  children: React.ReactNode;
-}
-
-const Button: React.FC<ButtonProps> = ({
-  variant = "primary",
-  size = "md",
-  href,
-  children,
-}) => {
+const Button = ({ variant = "primary", size = "md", href, children }) => {
   if (href) {
     return (
       <a

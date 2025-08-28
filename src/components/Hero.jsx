@@ -1,5 +1,6 @@
-import Button from "./Button";
-import styles from "../styles/NewHero.module.css";
+// src/components/Hero.jsx
+import Button from "./ui/Button";
+import styles from "../styles/Hero.module.css";
 import heroImg from "../assets/img/hero-img.jpg";
 
 export default function Hero() {
@@ -11,8 +12,8 @@ export default function Hero() {
         </h1>
         <h2>Web Developer & IT Support Specialist</h2>
         <p>
-          I build beautiful, responsive, and modern websites with clean code and
-          scalable architecture.
+          BSIT graduate specializing in responsive web development with a
+          growing focus on AI-powered tools and innovative digital solutions.
         </p>
 
         <div className={styles.buttons}>
