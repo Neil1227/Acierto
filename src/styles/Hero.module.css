@@ -2,14 +2,58 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 4rem 2rem;
-  max-width: 1200px; 
-  margin: 0 auto;
-  flex-wrap: wrap;
+  height: 90dvh;   /* full viewport height */
+  padding: 0 2rem;
   
-    /* bottom-only shadow */
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.heroContent {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  padding: 2.5rem;
+
+  background: var(--card-color); /* optional if you want shadow visible */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 2rem;
+}
+.socialLinks a {
+  color: var(--primary-color); /* primary color */
+  transition: transform 0.2s, color 0.2s;
+}
+
+.socialLinks a:hover {
+  color: var(--btn-bg-hover-color); /* slightly brighter on hover */
+  transform: scale(1.2);
+}
+
+.arrowDown {
+  position: absolute;
+  bottom: 50px; /* at bottom of hero */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-color);
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  text-decoration: none;
+}
+.arrowDown:hover{
+  color: var(--primary-color);
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-15px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-7px);
+  }
 }
 
 /* ------------------ Text ------------------ */
@@ -100,7 +144,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .heroContent {
     flex-direction: column-reverse; /* image below text */
     text-align: center;
     padding: 2.5rem 1rem;
@@ -129,6 +173,7 @@
     font-size: 1rem;
   }
 
+  
   .imageWrapper::after {
     border: 4px solid #fff;
     bottom: 7%;

@@ -3,11 +3,13 @@
 /* Color Variables */
 :root {
   --primary-color: #9a0002; /* Cherry Red */
-  --secondary-color: #ffffff; /* White */
+  --secondary-color: #efe6de; /* White */
   --text-color: #222; /* Dark gray text */
   --subtitle-color:#555;
   --navbar-color: rgba(210, 4, 45, 0.9); /* Cherry red with transparency */
-  --btn-bg-hover-color: #88011a; /* Darker cherry for hover */
+  --btn-bg-hover-color: #b40205; /* Darker cherry for hover */
+  --mix-color:#ee3538;
+  --card-color:#fafafa;
 }
 
 /* Global Reset + Base */

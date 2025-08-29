@@ -1,7 +1,9 @@
 .section {
   padding: 5rem 5rem;
+  margin: 3rem;
   /* background: var(--secondary-color); white background */
   color: var(--text-color); /* dark gray text */
+  max-height: 100dvh;
 }
 
 .header {
@@ -17,8 +19,8 @@
 }
 
 .gradientText {
-  background: linear-gradient(to right, var(--primary-color), var(--btn-bg-hover-color));
-  -webkit-background-clip: text;
+  background: linear-gradient(to right, var(--primary-color), var(--mix-color));
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -50,7 +52,7 @@
 
 .card {
   position: relative;
-  background: #fafafa; /* light background to contrast white page */
+  background: var(--card-color); /* light background to contrast white page */
   /* border: 1px solid #ddd; */
   border-radius: 0.75rem;
   padding: 1.5rem;
@@ -63,8 +65,6 @@
   /* lifted cherry shadow (bottom only) */
   box-shadow: 0 10px 15px -5px rgba(154, 0, 2, 0.4);
 }
-
-
 
 .cardContent {
   position: relative;
@@ -99,29 +99,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
-  background: transparent;   /* no background by default */
+  border-radius: 50%;
+  background: transparent; /* no background by default */
   font-size: 2rem;
   margin-bottom: 1rem;
-  transition: all 0.3s ease; /* smooth hover effect */
+  transition: all 0.3s ease;
+  color: var(--primary-color); /* cherry red default for icon */
 }
 
-/* Icon itself is primary by default */
-.iconWrapper i {
-  color: var(--primary-color);
-  transition: color 0.5s ease;
+/* Target the SVG inside the wrapper (react-icons are SVGs) */
+.iconWrapper svg {
+  transition: color 0.3s ease;
+  color: inherit; /* inherit cherry red */
 }
 
-/* On hover: container gets gradient, icon turns white */
-/* On card hover: container gets gradient, icon turns white */
+/* On card hover: wrapper gets gradient, icon turns white */
 .card:hover .iconWrapper {
-  background: linear-gradient(
-    to right,
-    var(--primary-color),
-    var(--btn-bg-hover-color)
-  );
+  background: linear-gradient(to right, var(--primary-color), var(--mix-color));
 }
 
-.card:hover .iconWrapper i {
+.card:hover .iconWrapper svg {
   color: #fff;
 }
+
+

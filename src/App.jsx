@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import SkillsProjects from "./components/SkillsProjects";
 import "./App.css";
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <SkillsProjects/>
     </div>
   );
 }
