@@ -2,14 +2,16 @@
 
 /* Color Variables */
 :root {
-  --primary-color: #9a0002; /* Cherry Red */
-  --secondary-color: #efe6de; /* White */
+  --primary-color: #004643; /* cyprus*/
+  --secondary-color: #fafafa; /* White */
+  --secondary-bg-color:#f9fafb;
   --text-color: #222; /* Dark gray text */
   --subtitle-color:#555;
   --navbar-color: rgba(210, 4, 45, 0.9); /* Cherry red with transparency */
-  --btn-bg-hover-color: #b40205; /* Darker cherry for hover */
-  --mix-color:#ee3538;
-  --card-color:#fafafa;
+  --btn-bg-hover-color: #0d6e6e; /* Darker cherry for hover */
+  --mix-color:#f02a2d;
+  --badge-color:#018a83;
+  --card-color:#f5f5f5 ;
 }
 
 /* Global Reset + Base */
@@ -95,7 +97,7 @@ a {
 
 /* Outer semi-circle ring */
 .outer-ring {
-  border-color: var(--tertiary-color, #ff4d4d);
+  border-color: var(--primary-color, #ff4d4d);
   animation: rotate-outer-ring 5s linear infinite;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 80%, 0% 100%);
 }
@@ -122,3 +124,8 @@ a {
   100% { transform: rotate(-360deg); }
 }
 
+.gradientText {
+  background: linear-gradient(to right, var(--primary-color), var(--mix-color));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

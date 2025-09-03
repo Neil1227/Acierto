@@ -15,7 +15,7 @@ import {
   FaGithub,
   FaWordpress,
 } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss, SiPython } from "react-icons/si"; // ✅ added Python
 
 const skills = [
   { icon: <FaHtml5 size={40} color="#E34F26" />, name: "HTML5" },
@@ -29,36 +29,43 @@ const skills = [
   { icon: <FaGitAlt size={40} color="#F05032" />, name: "Git" },
   { icon: <FaGithub size={40} color="#333" />, name: "GitHub" },
   { icon: <FaWordpress size={40} color="#21759B" />, name: "WordPress" },
-  { icon: <SiTailwindcss size={40} color="#38B2AC" />, name: "Tailwind" },
+  { icon: <SiPython size={40} color="#3776AB" />, name: "Python" }, // ✅ new skill
 ];
+
 
 const projects = [
   {
-    img: "/img/projects/KMUwebsite.png",
+    img: "/img/projects/kmu-final.png",
     title: "Knowledge Management Unit Website",
-    tech: ["React", "Tailwind", "Laravel"], // badges
+    tech: ["Laravel", "MySQL"],
+    link: "https://your-kmu-website.com",
   },
   {
-    img: "project2.jpg",
-    title: "Project Two",
+    img: "/img/projects/admin-kmu.png",
+    title: "Knowledge Management Unit Admin",
+    tech: ["Laravel", "MySQL"],
+    link: "https://your-kmu-admin.com",
+  },
+  {
+    img: "/img/projects/acv.png",
+    title: "Angeles City Vet Adoption System",
+    tech: ["PHP","MySQL"],
+    link: "https://acv.free.nf",
+  },
+  {
+    img: "/img/projects/acv-admin.png",
+    title: "Angeles City Vet Adoption System Admin",
+    tech: ["PHP","MySQL"],
+    link: "https://acv.free.nf/adminLogin.php",
+  },
+  {
+    img: "/img/projects/intern.png",
+    title: "Internship Portfolio",
     tech: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    img: "project3.jpg",
-    title: "Project Three",
-    tech: ["React Native", "Expo"],
-  },
-  {
-    img: "project4.jpg",
-    title: "Project Four",
-    tech: ["PHP", "MySQL"],
-  },
-  {
-    img: "project5.jpg",
-    title: "Project Five",
-    tech: ["Node.js", "Express", "MongoDB"],
+    link: "https://neil1227.github.io/IT-Internship/",
   },
 ];
+
 
 const SkillsProjects = () => {
   return (
@@ -78,30 +85,40 @@ const SkillsProjects = () => {
             </div>
           </div>
 
-<div className={styles.projects}>
-  <h2 className={about.gradientText}>My Projects</h2>
-  <div className={styles.projectsList}>
-    {projects.map((project, index) => (
-      <div key={index} className={styles.projectCard}>
-        <img src={project.img} alt={project.title} />
-        
-        <div className={styles.projectContent}>
-          <h3>{project.title}</h3>
-          <div className={styles.badges}>
-            {project.tech.map((tech, i) => (
-              <span key={i} className={styles.badge}>{tech}</span>
+        <div className={styles.projects}>
+          <h2 className={about.gradientText}>My Projects</h2>
+          <div className={styles.projectsList}>
+            {projects.map((project, index) => (
+              <div key={index} className={styles.projectCard}>
+              <img 
+                src={project.img} 
+                alt={project.title} 
+                style={{ width: "350px", height: "auto", objectFit: "fill", borderRadius: "8px" }} 
+              />
+
+                
+                <div className={styles.projectContent}>
+                  <h3>{project.title}</h3>
+                  <div className={styles.badges}>
+                    {project.tech.map((tech, i) => (
+                      <span key={i} className={styles.badge}>{tech}</span>
+                    ))}
+                  </div>
+                </div>
+                
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.demoButton}
+                >
+                  View <FaArrowRight style={{ marginLeft: "0.5rem" }} />
+                </a>
+
+              </div>
             ))}
           </div>
         </div>
-        
-        <a href="#" className={styles.demoButton}>
-          View <FaArrowRight style={{ marginLeft: "0.5rem" }} />
-        </a>
-      </div>
-    ))}
-  </div>
-</div>
-
 
         </div>
       </div>

@@ -1,9 +1,9 @@
 .section {
   padding: 5rem 5rem;
-  margin: 3rem;
+
   /* background: var(--secondary-color); white background */
   color: var(--text-color); /* dark gray text */
-  max-height: 100dvh;
+ 
 }
 
 .header {
@@ -42,6 +42,7 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (min-width: 1024px) {
@@ -49,7 +50,19 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+/* 📱 Small screens */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem; /* less side padding */
+  }
+}
 
+/* 📱 Extra small (phones under 480px) */
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 1rem; /* even tighter padding */
+  }
+}
 .card {
   position: relative;
   background: var(--card-color); /* light background to contrast white page */

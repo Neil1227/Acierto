@@ -20,6 +20,7 @@
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.8);
   height: 60px;
+
 }
 
 /* ------------------ Logo ------------------ */
@@ -72,13 +73,14 @@
 /* When scrolled - menu links turn white */
 .navbar.scrolled .menuItem a {
   color: #fff;
+  text-decoration: none;
 }
 
 /* Optional: active/hover states on dark bg */
 .navbar.scrolled .menuItem a:hover,
 .navbar.scrolled .menuItem a.active {
   color: var(--secondary-color, #fff); /* keep it white */
-  text-decoration: underline; /* or subtle underline */
+  text-decoration: none; /* or subtle underline */
 }
 
 /* ------------------ Hamburger ------------------ */

@@ -35,7 +35,7 @@ const skills = [
         {/* Header */}
         <div className={styles.header}>
           <h2 className={styles.title}>
-            About <span className={styles.gradientText}>Me</span>
+            <h1 className={styles.gradientText}>About Me</h1>
           </h2>
           <p className={styles.subtitle}>
             I'm a passionate developer with experience creating digital

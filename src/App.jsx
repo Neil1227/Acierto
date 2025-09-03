@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Timeline from "./components/Timeline";
 import SkillsProjects from "./components/SkillsProjects";
+
 import "./App.css";
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Timeline/>
       <SkillsProjects/>
     </div>
   );
