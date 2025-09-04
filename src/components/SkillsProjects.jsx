@@ -37,13 +37,13 @@ const projects = [
   {
     img: "/img/projects/kmu-final.png",
     title: "Knowledge Management Unit Website",
-    tech: ["Laravel", "MySQL"],
+    tech: ["Laravel PHP", "MySQL"],
     link: "https://your-kmu-website.com",
   },
   {
     img: "/img/projects/admin-kmu.png",
     title: "Knowledge Management Unit Admin",
-    tech: ["Laravel", "MySQL"],
+    tech: ["Laravel PHP", "MySQL"],
     link: "https://your-kmu-admin.com",
   },
   {

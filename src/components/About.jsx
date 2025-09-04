@@ -30,6 +30,7 @@ const skills = [
 ];
 
   return (
+    
     <section id="nextSection" className={styles.section}>
       <div className="max-w-6xl mx-auto">
         {/* Header */}

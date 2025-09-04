@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Timeline from "./components/Timeline";
 import SkillsProjects from "./components/SkillsProjects";
+import VantaBackground from "./components/VantaBackground";
 
 import "./App.css";
 
@@ -40,7 +41,9 @@ function App() {
       )}
 
       <Navbar />
-      <Hero />
+       <VantaBackground>
+        <Hero />
+        </VantaBackground>
       <About />
       <Timeline/>
       <SkillsProjects/>

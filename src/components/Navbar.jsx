@@ -5,14 +5,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Change navbar background when scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+useEffect(() => {
+  const handleScroll = () => {
+    const section = document.getElementById("nextSection"); // target section
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      // when section top reaches the top of viewport
+      setScrolled(rect.top <= 0);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
@@ -40,13 +46,10 @@ export default function Navbar() {
           <a href="#home">Home</a>
         </div>
         <div className={styles.menuItem}>
-          <a href="#about">About</a>
+          <a href="#nextSection">About</a>
         </div>
         <div className={styles.menuItem}>
-          <a href="#education">Education</a>
-        </div>
-        <div className={styles.menuItem}>
-          <a href="#experiences">Experiences</a>
+          <a href="#experiences">Career</a>
         </div>
         <div className={styles.menuItem}>
           <a href="#projects">Projects</a>

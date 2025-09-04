@@ -4,33 +4,44 @@ import { FaBriefcase, FaGraduationCap } from "react-icons/fa"; // ✅ import ico
 
 const timeline = [
   {
-    role: "Senior Software Engineer",
-    company: "Tech Innovation Corp",
-    period: "2022 - Present",
+    role: "Website Developer",
+    company: "Pampanga State Agricultural University",
+    period: "06/2025 - Present",
     description:
-      "Leading a team of 5 developers in building scalable web applications. Implemented microservices architecture that improved system performance by 40%.",
-    tags: ["React", "Node.js", "AWS", "TypeScript", "Team Leadership"],
-    icon: <FaBriefcase />, // ✅ icon component
+      "Developing web applications using React JS and Laravel PHP. Optimizing front-end and back-end components for better performance and maintainability.",
+    tags: ["React JS", "Laravel PHP"],
+    icon: <FaBriefcase />,
   },
   {
-    role: "Full Stack Developer",
-    company: "Digital Solutions Ltd",
-    period: "2020 - 2022",
+    role: "Hardware Technical Support",
+    company: "Superl Philippines",
+    period: "01/2025 - 06/2025",
     description:
-      "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces.",
-    tags: ["JavaScript", "Python", "PostgreSQL", "Docker"],
-    icon: <FaBriefcase />, // ✅ same icon for work
+      "Handled Level 1 Networking support while using my free time to study and practice Laravel PHP, building small projects to improve my web development skills.",
+    tags: ["Level 1 Networking", "Laravel PHP", "Technical Support", "Communications"],
+    icon: <FaBriefcase />,
+  },
+
+  {
+    role: "Bachelors Degree",
+    company: "Pampanga State Agricultural University",
+    period: "2020 - 2024",
+    description:
+      "Studied Computers, Networking, and Web Development. Gained hands-on experience in building applications and understanding networking protocols.",
+    tags: ["Computers", "Networking", "Web Development"],
+    icon: <FaGraduationCap />,
   },
   {
-    role: "Master of Computer Science",
-    company: "University of Technology",
-    period: "2018 - 2020",
+    role: "Service Crew Student",
+    company: "McDonald's Magalang, Pampanga",
+    period: "2021 - 2025",
     description:
-      "Specialized in Software Engineering and AI. Graduated with distinction. Thesis on machine learning applications in web development.",
-    tags: ["Machine Learning", "Algorithms", "Software Engineering"],
-    icon: <FaGraduationCap />, // ✅ graduation icon
+      "Developed strong communication, teamwork, and customer service skills while balancing work and studies.",
+    tags: ["Communications", "Team Work", "Costumer Service"],
+    icon: <FaBriefcase />,
   },
 ];
+
 
 export default function CareerRoadmap() {
   return (

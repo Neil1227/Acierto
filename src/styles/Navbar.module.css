@@ -18,7 +18,7 @@
 
 /* Scroll effect */
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--primary-color);
   height: 60px;
 
 }
@@ -72,8 +72,22 @@
 
 /* When scrolled - menu links turn white */
 .navbar.scrolled .menuItem a {
-  color: #fff;
+  color: var(--primary-color);
   text-decoration: none;
+}
+
+/* Desktop only */
+@media (min-width: 769px) {
+  .navbar.scrolled .menuItem a {
+    color: #fff; /* white on scroll for desktop */
+  }
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .navbar.scrolled .menuItem a {
+    color: #000; /* black on scroll for mobile */
+  }
 }
 
 /* Optional: active/hover states on dark bg */
@@ -159,7 +173,7 @@
   }
   /* When scrolled - menu links turn white */
 .navbar.scrolled .menuItem a {
-  color: #fff;
+  color: var(--primary-color);
 }
 
 }
