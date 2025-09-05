@@ -1,0 +1,198 @@
+/* Floating toggle button */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent; /* removes blue highlight on long press */
+  -webkit-user-select: none; /* prevents accidental text selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+background: var(--btn-bg-hover-color);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.chatbot-close-btn {
+  border: none;
+  border-radius: 50%;            /* circular */
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent; 
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.chatbot-close-btn:hover {
+  transform: rotate(90deg) scale(1.2); /* subtle rotation + scale */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  background: transparent; 
+  color: #fff;
+  cursor: pointer;
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  height: 450px; /* fixed height so it won't shrink initially */
+  display: flex;
+  flex-direction: column;
+  background: var(--secondary-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  z-index: 9999;
+}
+
+/* Messages area fills remaining space */
+.chatbot-messages {
+  flex: 1; /* takes all remaining space */
+  padding: 12px;
+  overflow-y: auto;
+  background: var(--secondary-bg-color);
+}
+
+
+/* Header */
+.chatbot-header {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header .close-btn {
+  background: transparent;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chatbot-header .close-btn:hover {
+  transform: scale(1.2);
+}
+.powered-by-container {
+  text-align: center;
+  padding: 4px 0;
+  background: transparent; /* white area */
+  font-size: 10px;
+  color: #555;
+  border-top: 1px solid #eee;
+}
+
+/* Messages */
+.chatbot-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: var(--secondary-bg-color);
+}
+
+.chat-message {
+  max-width: 75%;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  line-height: 1.4;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* User bubble */
+.chat-message.user {
+  background: var(--btn-bg-hover-color);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+/* Bot bubble */
+.chat-message.bot {
+  background: var(--primary-color) ;
+  color: #fff;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+/* Input */
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: var(--secondary-color);
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  background: var(--secondary-bg-color);
+  color: var(--text-color);
+}
+
+.chatbot-input button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chatbot-input button:hover {
+  background: var(--btn-bg-hover-color);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

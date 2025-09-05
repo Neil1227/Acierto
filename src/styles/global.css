@@ -26,14 +26,14 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
   background: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
   padding-top: 70px; /* same as .navbar height */
-  /* Remove flex centering */
   display: block;
 }
+
   
 
 a {

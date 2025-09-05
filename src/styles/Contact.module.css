@@ -127,6 +127,22 @@
   border-radius: 8px;
   margin-bottom: 10px;
 }
+.resumeBtn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.resumeBtn:hover {
+  background: var(--btn-bg-hover-color);
+  color: var(--secondary-color);
+}
 
 /* Social Icons */
 .socialIcons {

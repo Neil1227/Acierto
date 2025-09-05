@@ -9,6 +9,7 @@ import SkillsProjects from "./components/SkillsProjects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import VantaBackground from "./components/VantaBackground";
+import ChatBot from "./components/ChatBot";
 
 import "./App.css";
 
@@ -52,6 +53,8 @@ function App() {
       <Contact/>
       
       <Footer/>
+      <ChatBot />
+
     </div>
   );
 }

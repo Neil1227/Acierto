@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { FileText } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/Contact.module.css";
 import aboutStyles from "../styles/About.module.css";
@@ -36,6 +37,7 @@ export default function ContactPage() {
               <ValidationError prefix="Email" field="email" errors={state.errors} />
 
               <input
+              className="mb-4"
                 type="text"
                 name="subject"
                 placeholder="What's this about?"
@@ -61,7 +63,7 @@ export default function ContactPage() {
         <div className={styles.contactInfo}>
           <div className={styles.infoBox}>
             <h3 className={aboutStyles.gradientText}>Contact Information</h3>
-            <p>Feel free to reach out through any of these channels.</p>
+
             <div className={styles.infoItem}>
               <Mail size={20} />
               <span>neilpatrickacierto@gmail.com</span>
@@ -91,6 +93,18 @@ export default function ContactPage() {
               </a>
             </div>
           </div>
+          <div className={styles.infoBox}>
+            <h3 className={aboutStyles.gradientText}>Resume</h3>
+            <p>You can download my resume here:</p>
+            <a 
+              href="/LATEST_2025_Resume-Acierto-Neil-Patrick.pdf" 
+              download 
+              className={styles.resumeBtn}
+            >
+               <FileText size={18} style={{ marginRight: "5px" }} /> Download Resume
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
