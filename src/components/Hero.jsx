@@ -9,7 +9,7 @@ import { SiIndeed } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section id="home"className={styles.hero}>
 
       <div className={styles.heroContent}>
         <div className={styles.textContent}>

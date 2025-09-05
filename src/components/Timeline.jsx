@@ -9,7 +9,7 @@ const timeline = [
     period: "06/2025 - Present",
     description:
       "Developing web applications using React JS and Laravel PHP. Optimizing front-end and back-end components for better performance and maintainability.",
-    tags: ["React JS", "Laravel PHP"],
+    tags: ["React JS", "Laravel PHP" ,"Bootstrap"],
     icon: <FaBriefcase />,
   },
   {
@@ -23,7 +23,7 @@ const timeline = [
   },
 
   {
-    role: "Bachelors Degree",
+    role: "Bachelors of Science in Information Technology",
     company: "Pampanga State Agricultural University",
     period: "2020 - 2024",
     description:
@@ -32,7 +32,7 @@ const timeline = [
     icon: <FaGraduationCap />,
   },
   {
-    role: "Service Crew Student",
+    role: "Service Crew Working Student",
     company: "McDonald's Magalang, Pampanga",
     period: "2021 - 2025",
     description:
@@ -45,7 +45,7 @@ const timeline = [
 
 export default function CareerRoadmap() {
   return (
-    <div className={styles["roadmap-container"]}>
+    <div id="career" className={styles["roadmap-container"]}>
       <h1 className={about.gradientText}>Career Roadmap</h1>
       <p className={styles["roadmap-subtitle"]}>
         A chronological journey through my professional experiences and

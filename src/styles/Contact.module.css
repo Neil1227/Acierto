@@ -1,0 +1,216 @@
+/* Contact.module.css */
+.contactPage {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background-color: var(--secondary-bg-color);
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;  /* default: two-column */
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* General Styles */
+.contactForm,
+.contactInfo {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+  padding: 2rem;
+}
+
+/* Form Heading */
+.contactForm h2 {
+  margin-bottom: 10px;
+}
+
+.contactForm p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Input Layout */
+.formRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.formRow input {
+  flex: 1;
+}
+
+/* Inputs & Textarea */
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  background: #fafafa;
+  margin-bottom: 15px;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: var(--badge-color);
+  background: #fff;
+  box-shadow: 0 0 6px rgba(124, 58, 237, 0.3);
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.contactForm textarea {
+  resize: none;
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+/* Button */
+.contactForm button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s ease-in-out;
+}
+
+.contactForm button:hover {
+  background: var(--btn-bg-hover-color);
+}
+
+/* Info Section */
+.infoBox {
+  margin-bottom: 20px;
+}
+
+.infoBox h3 {
+  margin-bottom: 10px;
+}
+
+.infoBox p {
+  margin-bottom: 15px;
+  color: var(--subtitle-color);
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--secondary-color);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.socialIcons a {
+  color: var(--primary-color);   /* revert to icon color */
+  font-size: 1.5rem;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socialIcons a:hover {
+  color: var(--btn-bg-hover-color);  /* hover = different color */
+  transform: scale(1.1);
+}
+
+/* ================== Contact Form Feedback ================== */
+.successMsg {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #e6ffed; /* light green background */
+  color: #1a7f37; /* deep green text */
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid #a3e4c5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.errorMsg {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background-color: #ffe6e6; /* light red background */
+  color: #b91c1c; /* red text */
+  font-size: 0.85rem;
+  border: 1px solid #f5a5a5;
+}
+
+/* Form button feedback */
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ========================= */
+/*       RESPONSIVE FIX      */
+/* ========================= */
+
+/* Tablet (below 992px) */
+@media (max-width: 992px) {
+  .contactContainer {
+    grid-template-columns: 1fr;   /* stack columns */
+  }
+
+  .contactPage {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Mobile (below 600px) */
+@media (max-width: 600px) {
+  .contactPage {
+    padding: 2rem 1rem;
+  }
+
+  .formRow {
+    flex-direction: column;  /* stack inputs */
+    gap: 0;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .contactForm button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

@@ -6,6 +6,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Timeline from "./components/Timeline";
 import SkillsProjects from "./components/SkillsProjects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import VantaBackground from "./components/VantaBackground";
 
 import "./App.css";
@@ -47,6 +49,9 @@ function App() {
       <About />
       <Timeline/>
       <SkillsProjects/>
+      <Contact/>
+      
+      <Footer/>
     </div>
   );
 }

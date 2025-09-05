@@ -49,7 +49,7 @@ useEffect(() => {
           <a href="#nextSection">About</a>
         </div>
         <div className={styles.menuItem}>
-          <a href="#experiences">Career</a>
+          <a href="#career">Career</a>
         </div>
         <div className={styles.menuItem}>
           <a href="#projects">Projects</a>

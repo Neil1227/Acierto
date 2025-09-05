@@ -69,7 +69,7 @@ const projects = [
 
 const SkillsProjects = () => {
   return (
-    <section id="skills-projects" className={styles.section}>
+    <section id="projects" className={styles.section}>
       <div className="max-w-6xl mx-auto">
         <div className={styles.columns}>
           {/* Skills */}

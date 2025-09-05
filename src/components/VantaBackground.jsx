@@ -1,39 +1,40 @@
 // src/components/VantaBackground.jsx
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import NET from "vanta/dist/vanta.net.min";
 
-const VantaBackground = ({ children }) => {
+const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x055050 }) => {
   const vantaRef = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState(null);
+  const effectRef = useRef(null);
 
   useEffect(() => {
- if (!vantaEffect) {
-    const effect = NET({
-      el: vantaRef.current,
-      THREE,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.1,   // keep zoom slightly smaller
-      color: 0xffffff,
-      backgroundColor: 0x055050,
-      points: window.innerWidth < 768 ? 8 : 12,   // fewer points (mobile not too crowded)
-      maxDistance: window.innerWidth < 768 ? 18 : 22, // moderate connection length
-      spacing: window.innerWidth < 768 ? 16 : 20, // keeps net airy, not clustered
-      showDots: true,
-    });
-    setVantaEffect(effect);
-  }
-
+    if (!effectRef.current) {
+      effectRef.current = NET({
+        el: vantaRef.current,
+        THREE,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.1,
+        color: 0xffffff,
+        backgroundColor: backgroundColor, // allow custom colors per section
+        points: window.innerWidth < 768 ? 8 : 12,
+        maxDistance: window.innerWidth < 768 ? 18 : 22,
+        spacing: window.innerWidth < 768 ? 16 : 20,
+        showDots: true,
+      });
+    }
 
     return () => {
-      if (vantaEffect) vantaEffect.destroy();
+      if (effectRef.current) {
+        effectRef.current.destroy();
+        effectRef.current = null;
+      }
     };
-  }, [vantaEffect]);
+  }, [backgroundColor]);
 
   return (
     <div
@@ -41,7 +42,7 @@ const VantaBackground = ({ children }) => {
       style={{
         position: "relative",
         width: "100%",
-        height: "100dvh",
+        height: height,   // dynamic height
         overflow: "hidden",
       }}
     >
