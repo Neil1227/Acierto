@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import VantaBackground from "./components/VantaBackground";
 import ChatBot from "./components/ChatBot";
 
+import SmoothCursor from "./components/SmoothCursor"; // 👈 import here
 import "./App.css";
 
 function App() {
@@ -23,7 +24,6 @@ function App() {
       }, 2000); // small delay for smoother fade-out
     };
 
-    // If page already loaded (like with fast refresh)
     if (document.readyState === "complete") {
       handleLoad();
     } else {
@@ -34,6 +34,9 @@ function App() {
 
   return (
     <div>
+      {/* 👇 add the cursor at the very top so it overlays everything */}
+      <SmoothCursor size={60} ease={0.16} />
+
       {loading && (
         <div id="preloader">
           <div className="chart-container">
@@ -44,17 +47,15 @@ function App() {
       )}
 
       <Navbar />
-       <VantaBackground>
+      <VantaBackground>
         <Hero />
-        </VantaBackground>
+      </VantaBackground>
       <About />
       <Timeline/>
       <SkillsProjects/>
       <Contact/>
-      
       <Footer/>
       <ChatBot />
-
     </div>
   );
 }
