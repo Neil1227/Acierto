@@ -1,6 +1,6 @@
 // src/components/SkillsProjects.jsx
-import styles from "../styles/SkillsProjects.module.css";
-import about from "../styles/About.module.css";
+import styles from "@/styles/SkillsProjects.module.css";
+import about from "@/styles/About.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import {
   FaHtml5,

@@ -4,7 +4,7 @@ import {
   FaDatabase, FaGitAlt, FaGithub, FaWordpress 
 } from "react-icons/fa";
 import {  SiPython } from "react-icons/si";
-import styles from "../styles/SkillsBanner.module.css";
+import styles from "@/styles/SkillsBanner.module.css";
 
 const skills = [
   { icon: <FaHtml5 size={25} />, name: "HTML5" },

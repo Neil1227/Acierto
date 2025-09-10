@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { FaComments, FaPaperPlane, FaRobot } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/ChatBot.css";
+import "@/styles/ChatBot.css";
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([]);
