@@ -31,7 +31,11 @@ background: var(--btn-bg-hover-color);
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3); /* subtle custom focus ring */
   -webkit-tap-highlight-color: transparent; /* mobile fix */
 }
-
+/* override default active state */
+.chatbot-toggle:active {
+  background: var(--btn-bg-hover-color)!important; /* keep consistent with hover */
+  color: var(--secondary-color)!important;
+}
 .chatbot-close-btn {
   border: none;
   border-radius: 50%;            /* circular */
@@ -138,6 +142,7 @@ background: var(--btn-bg-hover-color);
 .chat-message.user {
   background: var(--btn-bg-hover-color);
   color: white;
+  padding: 1rem;
   margin-left: auto;
   border-bottom-right-radius: 4px;
 }
@@ -180,6 +185,10 @@ background: var(--btn-bg-hover-color);
   cursor: pointer;
   transition: background 0.3s;
 }
+.chatbot-input button.loading {
+  background: var(--primary-color); /* or transparent */
+  color: var(--primary-color);
+}
 
 .chatbot-input button:hover {
   background: var(--btn-bg-hover-color);
@@ -196,3 +205,72 @@ background: var(--btn-bg-hover-color);
     transform: translateY(0);
   }
 }
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: var(--btn-bg-hover-color);
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+.typing-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* space between dots */
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff; /* <-- change this to your preferred color */
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+

@@ -1,0 +1,67 @@
+.skillsBanner {
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(0,0,0,0.03), rgba(255,255,255,0.03), rgba(0,0,0,0.03));
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--secondary-color) 0%, transparent 20%, transparent 80%, var(--secondary-color) 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.skillsScroll {
+  display: flex;
+  flex-wrap: nowrap;      /* prevent wrapping */
+  gap: 1rem;              /* spacing between badges */
+  white-space: nowrap;    /* keep badges in one line */
+  animation: scrollLeft 20s linear infinite;
+  position: relative;
+}
+
+
+.skillBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--subtitle-color); /* text color */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  transition: background 0.3s;
+  flex-shrink: 0;  
+}
+
+.skillBadge:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Icon styling */
+.skillIcon svg {
+  color: var(--badge-color); /* unified icon color */
+  transition: color 0.3s;
+}
+
+.skillBadge:hover .skillIcon svg {
+  color: var(--btn-bg-hover-color); /* lighter shade on hover */
+}
+
+.skillName {
+  white-space: nowrap;
+}
+
+
+/* Scroll animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,4 +1,4 @@
-import styles from "../styles/About.module.css";
+import styles from "@/styles/About.module.css";
 import { FaCode, FaPaintBrush, FaServer, FaUsers } from "react-icons/fa";
 
 const About = () => {
@@ -35,9 +35,7 @@ const skills = [
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            <h1 className={styles.gradientText}>About Me</h1>
-          </h2>
+            <h1 className="gradientText">About Me</h1>
           <p className={styles.subtitle}>
             I'm a passionate developer with experience creating digital
             solutions that combine beautiful design with robust functionality. I

@@ -1,7 +1,8 @@
 // src/components/Hero.jsx
-import Button from "./ui/Button";
-import styles from "../styles/Hero.module.css";
-import heroImg from "../assets/img/hero-img.jpg";
+import Button from "@/components/ui/Button";
+import styles from "@/styles/Hero.module.css";
+import heroImg from "@/assets/img/hero-img.jpg";
+
 
 // Import icons
 import { FaGithub, FaFacebook, FaArrowDown } from "react-icons/fa";
@@ -16,7 +17,7 @@ export default function Hero() {
           <h1>
             Hi! I’m <span>Neil Acierto</span>
           </h1>
-          <h2>Web Developer & IT Support Specialist</h2>
+          <h2>Full-Stack Developer & IT Support Specialist</h2>
           <p>
             BSIT graduate specializing in responsive web development with a
             growing focus on AI-powered tools and innovative digital solutions.
@@ -52,7 +53,7 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className={styles.buttons}>
-            <Button variant="primary" size="md" href="#work">
+            <Button variant="primary" size="md" href="#projects">
               View My Work
             </Button>
             <Button variant="outline" size="md" href="#contact">

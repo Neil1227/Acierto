@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Timeline from "./components/Timeline";
-import SkillsProjects from "./components/SkillsProjects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Navbar from "./components/sections/Navbar";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Timeline from "./components/sections/Timeline";
+// import SkillsProjects from "./components/SkillsProjects";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/sections/Footer";
 import VantaBackground from "./components/VantaBackground";
+import Projects from "./components/sections/Projects";
 import ChatBot from "./components/ChatBot";
-
+import SkillsBanner from "./components/SkillsBanner";
 import SmoothCursor from "./components/SmoothCursor"; // 👈 import here
 import "./App.css";
 
@@ -47,12 +48,20 @@ function App() {
       )}
 
       <Navbar />
-      <VantaBackground>
-        <Hero />
-      </VantaBackground>
+        <VantaBackground>
+          <Hero />
+        </VantaBackground>
       <About />
       <Timeline/>
-      <SkillsProjects/>
+      {/* <SkillsProjects/> */}
+      <div className="projectTitle" style={{ textAlign: 'center' }}>
+        <h1 className="gradientText">
+          My Collection of Projects
+        </h1>
+        <p  style={{ color: 'var(--subtitle-color)' }}>A collection of my work showcasing full-stack development and innovative solutions across various technologies and industries.</p>
+      </div>
+      <SkillsBanner/>
+      <Projects/>
       <Contact/>
       <Footer/>
       <ChatBot />

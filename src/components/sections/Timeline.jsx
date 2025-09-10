@@ -1,5 +1,5 @@
-import styles from "../styles/Timeline.module.css";
-import about from "../styles/About.module.css";
+import styles from "@/styles/Timeline.module.css";
+import about from "@/styles/About.module.css";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa"; // ✅ import icons
 
 const timeline = [
@@ -46,7 +46,7 @@ const timeline = [
 export default function CareerRoadmap() {
   return (
     <div id="career" className={styles["roadmap-container"]}>
-      <h1 className={about.gradientText}>Career Roadmap</h1>
+      <h1 className="gradientText">Career Roadmap</h1>
       <p className={styles["roadmap-subtitle"]}>
         A chronological journey through my professional experiences and
         educational achievements

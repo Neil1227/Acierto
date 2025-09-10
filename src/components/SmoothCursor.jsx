@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const SELECTORS_TO_HIDE = "a, button, [role='button'], input, textarea, select, .cursor-hide";
-
 const SmoothCursor = ({
   size = 60,
   ease = 0.15,
@@ -13,26 +11,32 @@ const SmoothCursor = ({
   const rafRef = useRef(null);
   const pos = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const target = useRef({ x: pos.current.x, y: pos.current.y });
-  const [visible, setVisible] = useState(true);
-  const [opacity, setOpacity] = useState(1);
+  const [scale, setScale] = useState(1);
+  const [isMobile, setIsMobile] = useState(false); // track mobile
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return; // skip cursor logic on mobile
+
+    const SELECTORS_TO_HIDE = "a, button, [role='button'], input, textarea, select, .cursor-hide";
+
     const onMove = (e) => {
       target.current.x = e.clientX;
       target.current.y = e.clientY;
-      setVisible(true);
     };
-    const onEnter = () => setVisible(true);
-    const onLeave = () => setVisible(false);
 
     window.addEventListener("mousemove", onMove, { passive: true });
-    window.addEventListener("mouseenter", onEnter);
-    window.addEventListener("mouseleave", onLeave);
 
-    // Hide cursor smoothly on hover
     const hideTargets = document.querySelectorAll(SELECTORS_TO_HIDE);
-    const enterHide = () => setOpacity(0);
-    const leaveHide = () => setOpacity(1);
+    const enterHide = () => setScale(0);
+    const leaveHide = () => setScale(1);
+
     hideTargets.forEach((el) => {
       el.addEventListener("mouseenter", enterHide);
       el.addEventListener("mouseleave", leaveHide);
@@ -45,8 +49,7 @@ const SmoothCursor = ({
       if (dotRef.current) {
         const x = pos.current.x - size / 2;
         const y = pos.current.y - size / 2;
-        dotRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-        dotRef.current.style.opacity = visible ? opacity : 0;
+        dotRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
       }
 
       rafRef.current = requestAnimationFrame(tick);
@@ -56,15 +59,16 @@ const SmoothCursor = ({
 
     return () => {
       window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseenter", onEnter);
-      window.removeEventListener("mouseleave", onLeave);
       hideTargets.forEach((el) => {
         el.removeEventListener("mouseenter", enterHide);
         el.removeEventListener("mouseleave", leaveHide);
       });
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [ease, size, opacity]);
+  }, [ease, size, scale, isMobile]);
+
+  // Do not render on mobile
+  if (isMobile) return null;
 
   return (
     <div
@@ -78,10 +82,8 @@ const SmoothCursor = ({
         height: size,
         borderRadius: "50%",
         pointerEvents: "none",
-        transform: `translate3d(${pos.current.x - size / 2}px, ${
-          pos.current.y - size / 2
-        }px, 0)`,
-        transition: "opacity 0.25s ease-out, transform 0.16s ease",
+        transform: `translate3d(${pos.current.x - size / 2}px, ${pos.current.y - size / 2}px, 0) scale(${scale})`,
+        transition: "transform 0.25s ease-out",
         mixBlendMode: blendMode,
         zIndex: 9999,
         border: `${border}px solid ${borderColor}`,

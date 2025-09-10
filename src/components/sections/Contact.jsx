@@ -1,8 +1,8 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { FileText } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
-import styles from "../styles/Contact.module.css";
-import aboutStyles from "../styles/About.module.css";
+import styles from "@/styles/Contact.module.css";
+
 
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("xkgvppwa"); // <-- replace with your Formspree ID
@@ -12,7 +12,7 @@ export default function ContactPage() {
       <div className={styles.contactContainer}>
         {/* Form Section */}
         <div className={styles.contactForm}>
-          <h3 className={`${aboutStyles.gradientText} mb-2`}>Send me a Message</h3>
+          <h3 className="gradientText mb-2">Send me a Message</h3>
           <p>Fill out the form below and I’ll get back to you as soon as possible.</p>
 
           {state.succeeded ? (
@@ -62,11 +62,11 @@ export default function ContactPage() {
         {/* Contact Info Section */}
         <div className={styles.contactInfo}>
           <div className={styles.infoBox}>
-            <h3 className={aboutStyles.gradientText}>Contact Information</h3>
+            <h3 className="gradientText">Contact Information</h3>
 
             <div className={styles.infoItem}>
               <Mail size={20} />
-              <span>neilpatrickacierto@gmail.com</span>
+              <span>neilpatrickacierto27@gmail.com</span>
             </div>
             <div className={styles.infoItem}>
               <Phone size={20} />
@@ -79,7 +79,7 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.infoBox}>
-            <h3 className={aboutStyles.gradientText}>Follow Me</h3>
+            <h3 className="gradientText">Follow Me</h3>
             <p>Connect with me on social media for updates and insights.</p>
             <div className={styles.socialIcons}>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -94,17 +94,29 @@ export default function ContactPage() {
             </div>
           </div>
           <div className={styles.infoBox}>
-            <h3 className={aboutStyles.gradientText}>Resume</h3>
+            <h3 className="gradientText">Resume and Related Documents</h3>
             <p>You can download my resume here:</p>
-            <a 
-              href="/LATEST_2025_Resume-Acierto-Neil-Patrick.pdf" 
-              download 
-              className={styles.resumeBtn}
-            >
-               <FileText size={18} style={{ marginRight: "5px" }} /> Download Resume
-            </a>
+            
+            <div className={styles.resumeActions}>
+              <a 
+                href="/LATEST_2025_Resume-Acierto-Neil-Patrick.pdf" 
+                download 
+                className={styles.resumeBtn}
+              >
+                <FileText size={18} style={{ marginRight: "5px" }} /> Download Resume
+              </a>
+              
+              {/* <a 
+                href="/Certificates.pdf"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`${styles.outlineBtn}`}
+              >
+                <FileText size={18} style={{ marginRight: "5px" }} /> Certificates
+              </a> */}
+              
+            </div>
           </div>
-
         </div>
       </div>
     </div>
