@@ -26,11 +26,12 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
   background: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding-top: 70px; /* same as .navbar height */
+  /* padding-top: 70px;  */
+  /* same as .navbar height */
   display: block;
 }
 
@@ -40,8 +41,6 @@ body {
   background-clip: text;         /* Standard */
   -webkit-text-fill-color: transparent; /* Makes the text show gradient */
   color: transparent;            /* Fallback */
-  display: flex;
-  flex-direction: column;
 }
 
 .projectTitle{
@@ -124,7 +123,7 @@ a {
   left: 10%;
   width: 80%;
   height: 80%;
-  border-color: var(--primary-color, #a50321);
+  border-color: var(--mix-color, #a50321);
   animation: rotate-inner-ring 5s linear infinite;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 80%, 0% 100%);
 }

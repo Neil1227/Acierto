@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import NET from "vanta/dist/vanta.net.min";
 
-const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x055050 }) => {
+const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A7A }) => {
   const vantaRef = useRef(null);
   const effectRef = useRef(null);
 

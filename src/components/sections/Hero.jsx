@@ -1,7 +1,7 @@
 // src/components/Hero.jsx
 import Button from "@/components/ui/Button";
 import styles from "@/styles/Hero.module.css";
-import heroImg from "@/assets/img/hero-img.jpg";
+import heroImg from "@/assets/img/neil.webp";
 
 
 // Import icons
@@ -17,7 +17,7 @@ export default function Hero() {
           <h1>
             Hi! I’m <span>Neil Acierto</span>
           </h1>
-          <h2>Full-Stack Developer & IT Support Specialist</h2>
+          <h2>Full-Stack Developer</h2>
           <p>
             BSIT graduate specializing in responsive web development with a
             growing focus on AI-powered tools and innovative digital solutions.
