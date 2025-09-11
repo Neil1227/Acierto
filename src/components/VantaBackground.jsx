@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import NET from "vanta/dist/vanta.net.min";
 
-const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A7A }) => {
+const VantaBackground = ({ children, height }) => {
   const vantaRef = useRef(null);
   const effectRef = useRef(null);
 
@@ -20,7 +20,7 @@ const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A
         scale: 1.0,
         scaleMobile: 1.1,
         color: 0xffffff,
-        backgroundColor: backgroundColor, // allow custom colors per section
+        backgroundColor: 0x0A7A7A,
         points: window.innerWidth < 768 ? 8 : 12,
         maxDistance: window.innerWidth < 768 ? 18 : 22,
         spacing: window.innerWidth < 768 ? 16 : 20,
@@ -34,7 +34,7 @@ const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A
         effectRef.current = null;
       }
     };
-  }, [backgroundColor]);
+  }, []);
 
   return (
     <div
@@ -42,7 +42,8 @@ const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A
       style={{
         position: "relative",
         width: "100%",
-        height: height,   // dynamic height
+        height: height || "auto", // ✅ allow dynamic height
+        minHeight: "100vh",       // ✅ ensures full screen on big view
         overflow: "hidden",
       }}
     >
@@ -53,6 +54,8 @@ const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flexDirection: "column", // ✅ avoids compacting
+          width: "100%",
           height: "100%",
           color: "#fff",
           textAlign: "center",
@@ -63,5 +66,6 @@ const VantaBackground = ({ children, height = "100dvh", backgroundColor = 0x0A7A
     </div>
   );
 };
+
 
 export default VantaBackground;
