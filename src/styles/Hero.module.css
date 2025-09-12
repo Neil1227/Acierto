@@ -34,7 +34,7 @@
 }
 
 .textContent h1 {
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(var(--font-lg), 4vw, var(--font-xl));
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-color);
@@ -49,14 +49,13 @@
 }
 
 .textContent h2 {
-  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-size: clamp(var(--font-md), 3vw, var(--font-lg));
   font-weight: 500;
   color: var(--text-color);
 }
 
 .textContent p {
-  margin: 1.5rem 0 2.5rem;
-  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  font-size: clamp(var(--font-sm), 2vw, var(--font-md));
   line-height: 1.6;
   color: var(--subtitle-color);
   max-width: 600px;
@@ -68,6 +67,11 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.buttons a,
+.buttons button {
+  text-align: center;
 }
 
 /* ================= Image ================= */
@@ -134,14 +138,11 @@
 /* Tablet & below */
 @media (max-width: 768px) {
   .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0 0 20px;
-  margin: 20px 15px 0px; /* top padding = navbar height */
-  box-sizing: border-box;
-}
+    min-height: 100vh;
+    padding: 0 0 20px;
+    margin: 20px 15px 0;
+    box-sizing: border-box;
+  }
 
   .heroContent {
     flex-direction: column-reverse;
@@ -170,23 +171,20 @@
   .textContent h1 { font-size: 1.6rem; }
   .textContent h2 { font-size: 1rem; }
   .textContent p {
-    margin: 1rem auto 1.5rem;
     font-size: 0.9rem;
     line-height: 1.4;
   }
 
   .buttons {
-    flex-direction: column;   /* ✅ stack vertically */
-    align-items: stretch;     /* ✅ full width inside container */
+    flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
   }
 
   .buttons a,
   .buttons button {
-    width: 100%;              /* ✅ make each button full-width */
-    text-align: center;
+    width: 100%;
   }
-
 
   .arrowDown { display: none; }
 }
@@ -210,9 +208,10 @@
   }
   
   .heroContent {    
-    margin-top: 0px; 
+    margin-top: 0; 
     padding: 0.75rem; 
-    gap: 0.5rem; }
+    gap: 0.5rem;
+  }
 
   .imageWrapper img {
     width: 120px;

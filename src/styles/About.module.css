@@ -1,9 +1,7 @@
+
 .section {
   padding: 5rem 5rem;
-
-  /* background: var(--secondary-color); white background */
   color: var(--text-color); /* dark gray text */
- 
 }
 
 .header {
@@ -11,21 +9,20 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: clamp(var(--font-lg), 4vw, var(--font-xl));
   font-weight: bold;
   margin-bottom: 1.5rem;
   color: var(--primary-color); /* cherry red titles */
 }
 
-
 .subtitle {
-  font-size: 1.125rem;
+  font-size: var(--font-sm);
   color: var(--subtitle-color);
   max-width: 48rem;
-  margin: 0 auto;
   line-height: 1.75rem;
 }
 
@@ -39,7 +36,6 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -47,32 +43,31 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 /* 📱 Small screens */
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 1.5rem; /* less side padding */
+    padding: 3rem 1.5rem;
   }
 }
 
 /* 📱 Extra small (phones under 480px) */
 @media (max-width: 480px) {
   .section {
-    padding: 2rem 1rem; /* even tighter padding */
+    padding: 2rem 1rem;
   }
 }
+
 .card {
   position: relative;
-  background: var(--card-color); /* light background to contrast white page */
-  /* border: 1px solid #ddd; */
+  background: var(--card-color);
   border-radius: 0.75rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-
 }
 
 .card:hover {
-  /* lifted cherry shadow (bottom only) */
   box-shadow: 0 10px 15px -5px rgba(154, 0, 2, 0.4);
 }
 
@@ -80,29 +75,30 @@
   position: relative;
   z-index: 10;
   display: flex;
-  flex-direction: column;   /* stack items vertically */
-  justify-content: center;  /* center vertically */
-  align-items: center;      /* center horizontally */
-  text-align: center;   
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .icon {
-  font-size: 3rem;
+  font-size: var(--font-lg);
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
 
 .cardTitle {
-  font-size: 1.125rem;
+  font-size: var(--font-md);
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .cardDesc {
-  font-size: 0.875rem;
+  font-size: var(--font-sm);
   color: var(--subtitle-color);
 }
+
 .iconWrapper {
   width: 64px;
   height: 64px;
@@ -110,35 +106,24 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: transparent; /* no background by default */
-  font-size: 2rem;
+  background: transparent;
+  font-size: var(--font-md);
   margin-bottom: 1rem;
   transition: all 0.4s ease;
-  color: var(--primary-color); /* cherry red default for icon */
-
-    border: 3px solid transparent;
+  color: var(--primary-color);
+  border: 3px solid transparent;
   background: linear-gradient(white, white) padding-box,
               linear-gradient(to right, var(--primary-color), var(--mix-color)) border-box;
   background-size: 200% 200%;
   transition: background-position 0.4s ease, transform 0.3s ease;
 }
 
-/* Target the SVG inside the wrapper (react-icons are SVGs) */
 .iconWrapper svg {
   transition: color 0.3s ease;
-  color: inherit; /* inherit cherry red */
+  color: inherit;
 }
-
-/* On card hover: wrapper gets gradient, icon turns white */
 
 .card:hover .iconWrapper {
-  background-position: right center; /* smooth gradient movement */
-  transform: scale(1.05); /* optional subtle zoom */
+  background-position: right center;
+  transform: scale(1.05);
 }
-
-/* .card:hover .iconWrapper svg {
-  color: #fff;
-  
-} */
-
-

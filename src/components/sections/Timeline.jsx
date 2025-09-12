@@ -1,5 +1,4 @@
 import styles from "@/styles/Timeline.module.css";
-import about from "@/styles/About.module.css";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa"; // ✅ import icons
 
 const timeline = [
@@ -14,7 +13,7 @@ const timeline = [
   },
   {
     role: "Hardware Technical Support",
-    company: "Superl Philippines",
+    company: "Superl Philippines Inc.",
     period: "01/2025 - 06/2025",
     description:
       "Handled Level 1 Networking support while using my free time to study and practice Laravel PHP, building small projects to improve my web development skills.",
@@ -32,7 +31,7 @@ const timeline = [
     icon: <FaGraduationCap />,
   },
   {
-    role: "Service Crew Working Student",
+    role: "Service Crew",
     company: "McDonald's Magalang, Pampanga",
     period: "2021 - 2025",
     description:

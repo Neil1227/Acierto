@@ -1,6 +1,6 @@
 import styles from "@/styles/Projects.module.css";
 
-import { FaCode, FaClock, FaUsers, FaReact, FaGithub } from "react-icons/fa";
+import { FaCode, FaClock, FaUsers, FaUser, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 
@@ -134,14 +134,14 @@ const projects = [
                 ))}
               </div>
 
-              <div className={styles.projectMeta}>
-                <span className="flex items-center gap-1">
-                  <FaClock /> {project.duration}
-                </span>
-                <span className="flex items-center gap-1">
-                  <FaUsers /> {project.team}
-                </span>
-              </div>
+          <div className={styles.projectMeta}>
+            <span className="flex items-center gap-1">
+              <FaClock /> {project.duration}
+            </span>
+            <span className="flex items-center gap-1">
+              {project.team === "Solo" ? <FaUser /> : <FaUsers />} {project.team}
+            </span>
+          </div>
 
           <div className={styles.projectLinks}>
                 <a

@@ -56,9 +56,9 @@ function App() {
       {/* <SkillsProjects/> */}
       <div className="projectTitle" style={{ textAlign: 'center' }}>
         <h1 className="gradientText">
-          My Collection of Projects
+           Professional Skill Sets
         </h1>
-        <p  style={{ color: 'var(--subtitle-color)' }}>A collection of my work showcasing full-stack development and innovative solutions across various technologies and industries.</p>
+        <p  style={{ color: 'var(--subtitle-color)', fontSize: '1.125rem' ,padding: '1rem' }}>A blend of technical skills and creative problem-solving, shaped by real projects and hands-on experience.</p>
       </div>
       <SkillsBanner/>
       <Projects/>

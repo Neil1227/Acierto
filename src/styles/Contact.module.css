@@ -1,4 +1,4 @@
-/* Contact.module.css */
+/* ================= Base Layout ================= */
 .contactPage {
   display: flex;
   justify-content: center;
@@ -8,26 +8,26 @@
 
 .contactContainer {
   display: grid;
-  grid-template-columns: 2fr 1fr;  /* default: two-column */
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
   max-width: 1200px;
   width: 100%;
 }
 
-/* General Styles */
+/* ================= Form & Info Boxes ================= */
 .contactForm,
 .contactInfo {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info {
   padding: 2rem;
 }
 
-/* Form Heading */
+/* ================= Form Headings ================= */
 .contactForm h2 {
   margin-bottom: 10px;
 }
@@ -37,7 +37,7 @@
   color: #666;
 }
 
-/* Input Layout */
+/* ================= Form Inputs ================= */
 .formRow {
   display: flex;
   gap: 10px;
@@ -48,7 +48,6 @@
   flex: 1;
 }
 
-/* Inputs & Textarea */
 .contactForm input,
 .contactForm textarea {
   width: 100%;
@@ -83,12 +82,12 @@
   line-height: 1.5;
 }
 
-/* Button */
+/* ================= Form Button ================= */
 .contactForm button {
   width: 100%;
   padding: 12px;
   background: var(--primary-color);
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -104,7 +103,12 @@
   background: var(--btn-bg-hover-color);
 }
 
-/* Info Section */
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ================= Info Section ================= */
 .infoBox {
   margin-bottom: 20px;
 }
@@ -122,18 +126,21 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--subtitle-color);
   background: var(--secondary-color);
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
+/* ================= Resume / Action Buttons ================= */
 .resumeActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* spacing between buttons */
+  gap: 10px;
   margin-top: 10px;
 }
-/* Filled primary button — Resume */
+
 .resumeBtn {
   display: inline-flex;
   align-items: center;
@@ -155,7 +162,6 @@
   transform: translateY(-2px);
 }
 
-/* Outline / secondary button — Certificates */
 .outlineBtn {
   display: inline-flex;
   align-items: center;
@@ -175,24 +181,12 @@
 
 .outlineBtn:hover {
   background: var(--primary-color);
-    border: 3px solid var(--primary-color);
+  border: 3px solid var(--primary-color);
   color: #fff;
   transform: translateY(-2px);
 }
 
-
-@media (max-width: 600px) {
-  .resumeActions {
-    flex-direction: column;
-    align-items: stretch; /* full width */
-  }
-
-  .resumeBtn {
-    width: 100%;
-    text-align: center;
-  }
-}
-/* Social Icons */
+/* ================= Social Icons ================= */
 .socialIcons {
   display: flex;
   gap: 10px;
@@ -200,7 +194,7 @@
 }
 
 .socialIcons a {
-  color: var(--primary-color);   /* revert to icon color */
+  color: var(--primary-color);
   font-size: 1.5rem;
   margin: 0 5px;
   text-decoration: none;
@@ -208,17 +202,17 @@
 }
 
 .socialIcons a:hover {
-  color: var(--btn-bg-hover-color);  /* hover = different color */
+  color: var(--btn-bg-hover-color);
   transform: scale(1.1);
 }
 
-/* ================== Contact Form Feedback ================== */
+/* ================= Form Feedback ================= */
 .successMsg {
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #e6ffed; /* light green background */
-  color: #1a7f37; /* deep green text */
+  background-color: #e6ffed;
+  color: #1a7f37;
   font-size: 0.95rem;
   font-weight: 500;
   border: 1px solid #a3e4c5;
@@ -231,26 +225,16 @@
   margin-top: 0.5rem;
   padding: 0.75rem;
   border-radius: 6px;
-  background-color: #ffe6e6; /* light red background */
-  color: #b91c1c; /* red text */
+  background-color: #ffe6e6;
+  color: #b91c1c;
   font-size: 0.85rem;
   border: 1px solid #f5a5a5;
 }
 
-/* Form button feedback */
-button[disabled] {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* ========================= */
-/*       RESPONSIVE FIX      */
-/* ========================= */
-
-/* Tablet (below 992px) */
+/* ================= Responsive ================= */
 @media (max-width: 992px) {
   .contactContainer {
-    grid-template-columns: 1fr;   /* stack columns */
+    grid-template-columns: 1fr;
   }
 
   .contactPage {
@@ -258,23 +242,32 @@ button[disabled] {
   }
 }
 
-/* Mobile (below 600px) */
 @media (max-width: 600px) {
   .contactPage {
     padding: 2rem 1rem;
   }
 
   .formRow {
-    flex-direction: column;  /* stack inputs */
+    flex-direction: column;
     gap: 0;
   }
 
   .socialIcons {
-    justify-content: center;
+    justify-content: start;
   }
 
   .contactForm button {
     font-size: 14px;
     padding: 10px;
+  }
+
+  .resumeActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resumeBtn {
+    width: 100%;
+    text-align: center;
   }
 }

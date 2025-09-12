@@ -1,19 +1,22 @@
+/* =========================
+   Projects Page
+========================= */
 .projectsPage {
   padding: 4rem 5rem;
-
   background: var(--secondary-bg-color);
   color: var(--text-color);
   min-height: 100vh;
 }
-.title{
+
+.title {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
+
 .projectsTitle {
   text-align: center;
-  
-  font-size: 2.5rem;
+  font-size: var(--font-lg);
   margin-bottom: 2.5rem;
   color: var(--primary-color);
 }
@@ -24,6 +27,9 @@
   gap: 2rem;
 }
 
+/* =========================
+   Project Card
+========================= */
 .projectCard {
   background: var(--secondary-color);
   border-radius: 1rem;
@@ -39,15 +45,9 @@
   box-shadow: 0 10px 15px -5px rgba(154, 0, 2, 0.4);
 }
 
-.projectImage {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background: #eee;
-}
 .projectImageContainer {
-  padding: 1rem;                /* optional: keep it clean */
-  display: flex;               
+  padding: 1rem;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -55,9 +55,9 @@
 .projectImage {
   width: 100%;
   height: 180px;
-  object-fit: contain;         /* keeps aspect ratio without cropping */
-  border-radius: 0.5rem;       /* optional: round inside corners */
-  background: #eee;            /* fallback background */
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background: #eee;
 }
 
 .projectContent {
@@ -75,60 +75,48 @@
 }
 
 .projectTitle {
-  font-size: 1.25rem;
+  font-size: var(--font-sm);
   font-weight: bold;
   color: var(--primary-color);
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space between icon and text */
+  gap: 0.5rem;
 }
 
 .projectIcon {
-  font-size: 1.2rem;
+  font-size: var(--font-sm);
   color: var(--primary-color);
 }
-
 
 .statusBadge {
   padding: 0.25rem 0.6rem;
   border-radius: 1rem;
-  font-size: 0.75rem;
+  font-size: var(--font-sm); /* bump up from xs */
   font-weight: 600;
-  background: transparent;   /* no background */
+  background: transparent;
+}
+
+.statusCompleted,
+.statusProgress {
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: var(--font-xs); /* larger */
+  font-weight: 600;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
+              linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
 }
 
 .statusCompleted {
-  color: var(--primary-color);   /* cyprus text */
-  padding: 0.25rem 0.6rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-
-  /* gradient border hack */
-  border: 2px solid transparent;
-  background: 
-    linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box, 
-    linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
+  color: var(--primary-color);
 }
-
 
 .statusProgress {
-  color: var(--mix-color);   /* cherry red text */
-  padding: 0.25rem 0.6rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-
-  /* gradient border hack */
-  border: 2px solid transparent;
-  background: 
-    linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box, 
-    linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
+  color: var(--mix-color);
 }
 
-
 .projectDescription {
-  font-size: 0.95rem;
+  font-size: var(--font-sm); /* base readable */
   color: var(--subtitle-color);
   margin: 1rem 0;
 }
@@ -141,19 +129,18 @@
   display: inline-block;
   background: #f3f4f6;
   color: var(--subtitle-color);
-  font-size: 0.7rem;
-  padding: 0.35rem 1rem;   /* more horizontal padding */
-  border-radius: 9999px;   /* fully rounded (pill shape) */
+  font-size: var(--font-xs); /* larger tags */
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  font-weight: 500;        /* optional: makes text stand out */
+  font-weight: 500;
 }
-
 
 .projectMeta {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
+  font-size: var(--font-sm); /* readable */
   color: var(--subtitle-color);
   margin-bottom: 1rem;
 }
@@ -181,6 +168,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: var(--font-sm);
 }
 
 .btn:hover {
@@ -189,169 +177,63 @@
 }
 
 .secondary {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    background: transparent;
-
+  color: var(--primary-color);
+  font-size: var(--font-md);
+  background: transparent;
 }
- 
 
 .secondary:hover {
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    background: var(--primary-color);
+  color: var(--secondary-color);
+  background: var(--primary-color);
 }
 
-/* Make Demo button wider */
 .demoBtn {
   flex: 2; /* wider than GitHub */
 }
+
 /* =========================
    Responsive Styles
 ========================= */
-
-/* Large screens (default already defined above) */
 @media (max-width: 1200px) {
-  .title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .projectsPage {
-    padding: 3.5rem 4rem;
-  }
-
-  .projectsTitle {
-    font-size: 2.25rem;
-  }
-
-  .projectImage {
-    height: 160px;
-  }
+  .title { align-items: center; }
+  .projectsPage { padding: 3.5rem 4rem; }
+  .projectsTitle { font-size: var(--font-md); }
+  .projectImage { height: 160px; }
 }
 
 @media (max-width: 992px) {
-  .projectsPage {
-    padding: 3rem 3rem;
-  }
-
-  .projectsTitle {
-    font-size: 2rem;
-  }
-
-  .projectsGrid {
-    gap: 1.8rem;
-  }
-
-  .projectImage {
-    height: 150px;
-  }
-
-  .projectContent {
-    padding: 1.25rem;
-  }
-
-  .projectTitle {
-    font-size: 1.15rem;
-  }
-
-  .projectDescription {
-    font-size: 0.9rem;
-  }
-
-  .tag {
-    font-size: 0.65rem;
-    padding: 0.3rem 0.8rem;
-  }
-
-  .btn {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.9rem;
-  }
-
-  .secondary {
-    font-size: 1.35rem;
-  }
+  .projectsPage { padding: 3rem; }
+  .projectsTitle { font-size: clamp(var(--font-sm), 4vw, var(--font-md)); }
+  .projectsGrid { gap: 1.8rem; }
+  .projectImage { height: 150px; }
+  .projectContent { padding: 1.25rem; }
+  .projectTitle { font-size: var(--font-md); } /* keep prominent */
+  .projectDescription { font-size: var(--font-sm); }
+  .tag { font-size: var(--font-xs); }
+  .btn { font-size: var(--font-sm); }
+  .secondary { font-size: var(--font-md); }
 }
 
 @media (max-width: 768px) {
-  .projectsPage {
-    padding: 2rem 2rem;
-  }
-
-  .projectsTitle {
-    font-size: 1.75rem;
-    text-align: left;
-  }
-
-  .projectsGrid {
-    grid-template-columns: 1fr; /* single column for mobile */
-    gap: 1.5rem;
-  }
-
-  .projectImage {
-    height: 140px;
-  }
-
-  .projectContent {
-    padding: 1rem;
-  }
-
-  .projectTitle {
-    font-size: 1.1rem;
-  }
-
-  .projectDescription {
-    font-size: 0.85rem;
-  }
-
-  .tag {
-    font-size: 0.6rem;
-    padding: 0.25rem 0.7rem;
-  }
-
-  .btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  .secondary {
-    font-size: 1.25rem;
-  }
+  .projectsPage { padding: 2rem; }
+  .projectsTitle { font-size: clamp(var(--font-sm), 5vw, var(--font-md)); text-align: left; }
+  .projectsGrid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .projectImage { height: 140px; }
+  .projectContent { padding: 1rem; }
+  .projectTitle { font-size: var(--font-md); } /* bigger on mobile */
+  .projectDescription { font-size: var(--font-sm); }
+  .tag { font-size: var(--font-xs); padding: 0.3rem 0.8rem; }
+  .btn { font-size: var(--font-sm); }
+  .secondary { font-size: var(--font-md); }
 }
 
 @media (max-width: 480px) {
-  .projectsPage {
-    padding: 1.5rem 1rem;
-  }
-
-  .projectsTitle {
-    font-size: 1.5rem;
-  }
-
-  .projectImage {
-    height: 120px;
-  }
-
-  .projectTitle {
-    font-size: 1rem;
-  }
-
-  .projectDescription {
-    font-size: 0.8rem;
-  }
-
-  .tag {
-    font-size: 0.55rem;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .btn {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.8rem;
-  }
-
-  .secondary {
-    font-size: 1rem;
-  }
+  .projectsPage { padding: 1.5rem 1rem; }
+  .projectsTitle { font-size: clamp(var(--font-sm), 6vw, var(--font-md)); }
+  .projectImage { height: 120px; }
+  .projectTitle { font-size: var(--font-md); } /* bold & readable */
+  .projectDescription { font-size: var(--font-sm); }
+  .tag { font-size: var(--font-xs); padding: 0.25rem 0.7rem; }
+  .btn { font-size: var(--font-sm); padding: 0.45rem 0.9rem; }
+  .secondary { font-size: var(--font-md); }
 }

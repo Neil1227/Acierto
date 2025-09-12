@@ -1,3 +1,15 @@
+:root {
+  /* Golden ratio font scale */
+  --font-xs: 0.62rem;
+  --font-sm: 1rem;
+  --font-lg: 1.62rem;
+
+  /* Button paddings (approx golden ratio) */
+  --btn-padding-sm: 0.38rem 0.77rem; /* ~0.62 * 0.62 */
+  --btn-padding-md: 0.62rem 1rem;    /* base */
+  --btn-padding-lg: 1rem 1.62rem;    /* scaled */
+}
+
 .btn {
   border: none;
   border-radius: 6px;
@@ -9,9 +21,20 @@
 }
 
 /* Sizes */
-.sm { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
-.md { padding: 0.6rem 1.2rem; font-size: 1rem; }
-.lg { padding: 0.8rem 1.6rem; font-size: 1.2rem; }
+.sm {
+  padding: var(--btn-padding-sm);
+  font-size: var(--font-xs);
+}
+
+.md {
+  padding: var(--btn-padding-md);
+  font-size: var(--font-sm);
+}
+
+.lg {
+  padding: var(--btn-padding-lg);
+  font-size: var(--font-lg);
+}
 
 /* Variants */
 .primary {
