@@ -146,8 +146,3 @@ a {
   100% { transform: rotate(-360deg); }
 }
 
-.gradientText {
-  background: linear-gradient(to right, var(--primary-color), var(--mix-color));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}

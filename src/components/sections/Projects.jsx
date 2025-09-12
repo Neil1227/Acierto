@@ -82,14 +82,35 @@ const projects = [
     githubUrl: "#",
     featured: false,
   },
-  
+{
+  id: 6,
+  title: "Portfolio Version 1",
+  description:
+    "My first personal portfolio, created to showcase my projects, skills, and internship experiences. Built using static HTML, CSS, and JavaScript as a foundation for future development.",
+  image: "/img/projects/portfoliov1.png",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  category: "Portfolio",
+  status: "Completed",
+  duration: "<1 month",
+  team: "Solo",
+  demoUrl: "https://neil1227.github.io/Portfolio/",
+  githubUrl: "#",
+  featured: false,
+}
+
 ];
 
 
   return (
     <div id="projects" className={styles.projectsPage}>
     <div className={styles.title}>
-      <h1 className="mb-3 gradientText">Featured Projects</h1>
+<h1
+  className="mb-3 gradientText"
+  style={{ textAlign: "center" }}
+>
+  Featured Projects:
+</h1>
+
     </div>
       <div className={styles.projectsGrid}>
         {projects.map((project) => (
