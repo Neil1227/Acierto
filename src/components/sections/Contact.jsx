@@ -8,8 +8,14 @@ export default function ContactPage() {
   const [state, handleSubmit] = useForm("xkgvppwa"); // <-- replace with your Formspree ID
 
   return (
+    
     <div id="contact" className={styles.contactPage}>
+          {/* Section Title */}
+        <h1 className="gradientText" style={{ textAlign: "center", marginBottom: "2rem" }}>
+          Your Next Developer Starts Here:
+        </h1>
       <div className={styles.contactContainer}>
+
         {/* Form Section */}
         <div className={styles.contactForm}>
           <h3 className="gradientText mb-2">Send me a Message</h3>

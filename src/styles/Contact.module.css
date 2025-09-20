@@ -1,11 +1,17 @@
 /* ================= Base Layout ================= */
-.contactPage {
+/* .contactPage {
   display: flex;
   justify-content: center;
   padding: 5rem 2rem;
+  background-color: var(--secondary-bg-color);
+} */
+.contactPage {
+  display: flex;
+  flex-direction: column; /* 👈 stack children vertically */
+  align-items: center;    /* 👈 center horizontally */
+  padding: 5rem 2rem;
   /* background-color: var(--secondary-bg-color); */
 }
-
 .contactContainer {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -13,6 +19,13 @@
   max-width: 1200px;
   width: 100%;
 }
+.contactTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 
 /* ================= Form & Info Boxes ================= */
 .contactForm,
@@ -181,9 +194,9 @@ button[disabled] {
 
 .outlineBtn:hover {
   background: var(--primary-color);
-  border: 3px solid var(--primary-color);
+  /* border: 3px solid var(--primary-color); */
   color: #fff;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 /* ================= Social Icons ================= */
