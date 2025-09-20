@@ -33,13 +33,35 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
-  background: var(--secondary-color);
+  background: url("../assets/img/try2.jpg") no-repeat center center fixed; /* replace with your image path */
+  background-size: cover; /* makes the image cover the whole screen */
   color: var(--text-color);
   line-height: 1.6;
   /* padding-top: 70px;  */
   /* same as .navbar height */
   display: block;
 }
+.imageWrapper {
+  position: relative;
+  display: inline-block; /* keeps both images aligned */
+}
+
+.bgImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;     /* make it larger than main image */
+  transform: translate(-50%, -50%);
+  z-index: 0;      /* stays behind */
+}
+
+.mainImage {
+  position: relative;
+  z-index: 1;      /* stays in front */
+  width: 100%;
+  height: auto;
+}
+
 
 .gradientText {
   background: linear-gradient(to right, var(--primary-color), var(--mix-color));

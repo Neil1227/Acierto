@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   padding: 5rem 2rem;
-  background-color: var(--secondary-bg-color);
+  /* background-color: var(--secondary-bg-color); */
 }
 
 .contactContainer {
@@ -17,7 +17,7 @@
 /* ================= Form & Info Boxes ================= */
 .contactForm,
 .contactInfo {
-  background: #fff;
+  background: var(--secondary-color);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

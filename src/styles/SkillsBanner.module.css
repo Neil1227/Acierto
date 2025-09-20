@@ -3,12 +3,19 @@
   padding: 2rem 0;
   overflow: hidden;
   background: linear-gradient(to right, rgba(0,0,0,0.03), rgba(255,255,255,0.03), rgba(0,0,0,0.03));
+  margin-bottom: 1rem;
 }
 
 .gradientOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--secondary-color) 0%, transparent 20%, transparent 80%, var(--secondary-color) 100%);
+  background: linear-gradient(
+  to right,
+  var(--secondary-color) 0%,
+  transparent 20%,
+  transparent 80%,
+  var(--secondary-color) 100%
+);
   z-index: 10;
   pointer-events: none;
 }

@@ -3,7 +3,7 @@
 ========================= */
 .projectsPage {
   padding: 4rem 5rem;
-  background: var(--secondary-bg-color);
+  /* background: var(--secondary-bg-color); */
   color: var(--text-color);
   min-height: 100vh;
 }

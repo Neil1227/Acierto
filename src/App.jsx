@@ -54,7 +54,7 @@ function App() {
       <About />
       <Timeline/>
       {/* <SkillsProjects/> */}
-      <div className="projectTitle" style={{ textAlign: 'center' }}>
+      <div className="projectTitle mt-5" style={{ textAlign: 'center' }}>
         <h1 className="gradientText">
            Professional Skill Sets
         </h1>
