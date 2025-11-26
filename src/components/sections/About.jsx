@@ -12,7 +12,7 @@ const skills = [
   {
     icon: <FaPaintBrush size={30} />,
     title: "UI/UX Design",
-    description: "Word Press, Figma, Bootstrap, Design Systems",
+    description: "Word Press, Bootstrap, Design Systems",
     color: "#9a0002",
   },
   {

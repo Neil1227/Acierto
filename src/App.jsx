@@ -5,6 +5,8 @@ import Navbar from "./components/sections/Navbar";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Timeline from "./components/sections/Timeline";
+
+import Certifications from "./components/sections/Certifications";
 // import SkillsProjects from "./components/SkillsProjects";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
@@ -62,6 +64,7 @@ function App() {
       </div>
       <SkillsBanner/>
       <Projects/>
+       <Certifications/>
       <Contact/>
       <Footer/>
       <ChatBot />

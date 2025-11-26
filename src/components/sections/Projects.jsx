@@ -12,7 +12,7 @@ const projects = [
     title: "Knowledge Management Unit Website",
     description:
       "A public-facing website for the Knowledge Management Unit, built with Laravel and MySQL to provide information access and organizational resources.",
-    image: "/img/projects/kmu-final.png",
+    image: "/img/projects/km.jpg",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
     status: "Inprogress",
@@ -27,7 +27,7 @@ const projects = [
     title: "Knowledge Management Unit Admin",
     description:
       "Admin dashboard for managing KMU content and data. Includes authentication, content management, and reporting features.",
-    image: "/img/projects/admin-kmu.png",
+    image: "/img/projects/admin-km.jpg",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
     status: "Completed",
@@ -99,7 +99,6 @@ const projects = [
 }
 
 ];
-
 
   return (
     <div id="projects" className={styles.projectsPage}>

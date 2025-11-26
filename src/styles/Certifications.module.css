@@ -1,0 +1,187 @@
+/* Certifications.module.css */
+
+/* =========================
+   Page & Grid
+========================= */
+.certificationsPage {
+  padding: 4rem 5rem;
+  background: var(--secondary-bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================
+   Certification Card
+========================= */
+.certCard {
+  background: var(--card-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.certCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.featured {
+  border: 2px solid var(--primary-color); /* Indigo / primary for featured */
+}
+
+.certImageContainer {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.certContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.certHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certTitle {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.statusBadge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.statusCompleted {
+  background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
+              linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
+  color: var(--primary-color);
+}
+
+.statusProgress {
+  background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
+              linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
+  color: var(--mix-color);
+}
+
+.certDescription {
+  font-size: var(--font-sm);
+  color: var(--subtitle-color);
+  margin-bottom: 0.5rem;
+}
+
+.certSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #eef2ff;
+  color: var(--primary-color);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.certMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-sm);
+  color: var(--subtitle-color);
+  margin-bottom: 1rem;
+}
+
+.certLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.verificationBtn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.verificationBtn:hover {
+  background-color: var(--mix-color);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 1200px) {
+  .certificationsPage { padding: 3.5rem 4rem; }
+  .certTitle { font-size: var(--font-sm); }
+  .certImage { height: 160px; }
+}
+
+@media (max-width: 992px) {
+  .certificationsPage { padding: 3rem; }
+  .certificationsGrid { gap: 1.8rem; }
+  .certImage { height: 150px; }
+  .certContent { padding: 1.25rem; }
+  .certTitle { font-size: var(--font-md); }
+}
+
+@media (max-width: 768px) {
+  .certificationsPage { padding: 2rem; }
+  .certificationsGrid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .certImage { height: 140px; }
+  .certContent { padding: 1rem; }
+  .certTitle { font-size: var(--font-md); }
+}
+
+@media (max-width: 480px) {
+  .certificationsPage { padding: 1.5rem 1rem; }
+  .certImage { height: 120px; }
+  .certTitle { font-size: var(--font-md); }
+}

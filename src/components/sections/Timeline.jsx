@@ -5,7 +5,7 @@ const timeline = [
   {
     role: "Website Developer",
     company: "Pampanga State Agricultural University",
-    period: "06/2025 - Present",
+    period: "06/2025 - 12/2025",
     description:
       "Developing web applications using React JS and Laravel PHP. Optimizing front-end and back-end components for better performance and maintainability.",
     tags: ["React JS", "Laravel PHP" ,"Bootstrap"],
