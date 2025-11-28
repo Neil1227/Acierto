@@ -30,7 +30,7 @@ const projects = [
     image: "/img/projects/admin-km.jpg",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
-    status: "Completed",
+    status: "Inprogress",
     duration: "6 months",
     team: "Solo",
     demoUrl: "#",
@@ -84,7 +84,7 @@ const projects = [
   },
 {
   id: 6,
-  title: "Portfolio Version 1",
+  title: "First Personal Portfolio",
   description:
     "My first personal portfolio, created to showcase my projects, skills, and internship experiences. Built using static HTML, CSS, and JavaScript as a foundation for future development.",
   image: "/img/projects/portfoliov1.png",
@@ -104,7 +104,7 @@ const projects = [
     <div id="projects" className={styles.projectsPage}>
     <div className={styles.title}>
 <h1
-  className="mb-3 gradientText"
+  className="mb-3 gradientText mx-auto mb-5"
   style={{ textAlign: "center" }}
 >
   Featured Projects:

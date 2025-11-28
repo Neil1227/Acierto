@@ -111,16 +111,6 @@ export default function ContactPage() {
               >
                 <FileText size={18} style={{ marginRight: "5px" }} /> Download Resume
               </a>
-              
-              <a 
-                href="/Certificates.pdf"
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={`${styles.outlineBtn}`}
-              >
-                <FileText size={18} style={{ marginRight: "5px" }} /> Certificates
-              </a>
-              
             </div>
           </div>
         </div>
