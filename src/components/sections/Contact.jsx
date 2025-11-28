@@ -105,7 +105,7 @@ export default function ContactPage() {
             
             <div className={styles.resumeActions}>
               <a 
-                href="/LATEST_2025_Resume-Acierto-Neil-Patrick.pdf" 
+                href="/Acierto_Neil_Patrick_CV.pdf" 
                 download 
                 className={styles.resumeBtn}
               >
