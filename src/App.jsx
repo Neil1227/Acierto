@@ -67,7 +67,7 @@ function App() {
        <Certifications/>
       <Contact/>
       <Footer/>
-      <ChatBot />
+      {/* <ChatBot /> */}
     </div>
   );
 }
