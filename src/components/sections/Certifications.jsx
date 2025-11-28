@@ -32,8 +32,8 @@ const Certifications = () => {
 
   return (
     <div id="certifications" className={styles.certificationsPage}>
-      <div className={styles.title}>
-        <h1 className="mb-5 gradientText" style={{ textAlign: "center" }}>
+      <div className={proj.title}>
+        <h1 className="mb-5 gradientText mx-auto" style={{ textAlign: "center" }}>
           My Certifications
         </h1>
       </div>
