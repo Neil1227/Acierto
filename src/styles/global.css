@@ -14,11 +14,11 @@
   --card-color:#f5f5f5 ;
   --glass-color: rgba(255, 255, 255, 0.1);
 
-  --font-xs: 0.62rem;   /* captions, small labels */
-  --font-sm: 1rem;      /* base body */
-  --font-md: 1.62rem;   /* subtitle / small heading */
-  --font-lg: 2.62rem;   /* section heading */
-  --font-xl: 4.24rem;   /* main heading / hero */
+  --font-xs: 0.75rem;   /* ~12px */
+  --font-sm: 0.875rem;  /* ~14px - base */
+  --font-md: 1.41rem;   /* ~23px */
+  --font-lg: 2.28rem;   /* ~36px */
+  --font-xl: 3.68rem;   /* ~59px */
 }
 
 /* Global Reset + Base */

@@ -17,10 +17,9 @@ export default function Hero() {
           <h1>
             Hi! I’m <span>Neil Acierto</span>
           </h1>
-          <h2>Full-Stack Developer</h2>
+          <h2>Full-Stack Developer (Laravel PHP)</h2>
           <p>
-            BSIT graduate specializing in responsive web development with a
-            growing focus on AI-powered tools and innovative digital solutions.
+Web developer with experience in responsive design, modern web technologies, and AI-powered tool integration. Focused on building efficient and innovative user experiences.
           </p>
 
           {/* Social links */}

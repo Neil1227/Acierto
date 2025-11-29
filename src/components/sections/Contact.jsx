@@ -85,7 +85,7 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.infoBox}>
-            <h3 className="gradientText">Follow Me</h3>
+            <h3 className="gradientText">Social media</h3>
             <p>Connect with me on social media for updates and insights.</p>
             <div className={styles.socialIcons}>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -100,7 +100,7 @@ export default function ContactPage() {
             </div>
           </div>
           <div className={styles.infoBox}>
-            <h3 className="gradientText">Resume and Related Documents</h3>
+            <h3 className="gradientText">Curriculum Vitae</h3>
             <p>You can download my resume here:</p>
             
             <div className={styles.resumeActions}>
