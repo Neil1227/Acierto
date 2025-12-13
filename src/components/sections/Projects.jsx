@@ -4,9 +4,18 @@ import { FaCode, FaClock, FaUsers, FaUser, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 
-
+const techClassMap = {
+  "PHP": styles.tagPHP,
+  "Laravel PHP": styles.tagLaravelPHP,
+  "MySQL": styles.tagMySQL,
+  "HTML": styles.tagHTML,
+  "CSS": styles.tagCSS,
+  "JavaScript": styles.tagJavaScript,
+  "Bootstrap": styles.tagBootstrap,
+};
 const Projects = () => {
 const projects = [
+  
   {
     id: 1,
     title: "Knowledge Management Unit Website",
@@ -146,13 +155,19 @@ const projects = [
 
               <p className={styles.projectDescription}>{project.description}</p>
 
-              <div className={styles.projectTags}>
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className={styles.tag}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
+
+
+          <div className={styles.projectTags}>
+            {project.technologies.map((tech, index) => (
+              <span
+                key={index}
+                className={`${styles.tag} ${techClassMap[tech] || ""}`}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
 
           <div className={styles.projectMeta}>
             <span className="flex items-center gap-1">

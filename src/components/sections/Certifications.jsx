@@ -3,6 +3,16 @@ import proj from "@/styles/Projects.module.css";
 import { FaCertificate, FaClock } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
+const techClassMap = {
+  "PHP": proj.tagPHP,
+  "Laravel": proj.tagLaravelPHP,
+  "MySQL": proj.tagMySQL,
+  "HTML": proj.tagHTML,
+  "CSS": proj.tagCSS,
+  "JavaScript": proj.tagJavaScript,
+  "React JS": proj.tagReact,
+};
+
 const Certifications = () => {
   const certifications = [
     {
@@ -18,9 +28,9 @@ const Certifications = () => {
     },
     {
       id: 1,
-      title: "React js Certification",
+      title: "React JS Certification",
       description: "Build Modern Web Application with Laravel and React",
-      skills: ["React js","Laravel", "PHP", "MySQL"],
+      skills: ["React JS","Laravel", "PHP", "MySQL"],
       status: "Completed",
       duration: "12 hours",
       issuer: "Ground Gurus",
@@ -61,9 +71,13 @@ const Certifications = () => {
 
               <div className={styles.certSkills}>
                 {cert.skills.map((skill, index) => (
-                  <span key={index} className={styles.tag}>
-                    {skill}
-                  </span>
+              <span
+                key={index}
+                className={`${proj.tag} ${techClassMap[skill] || ""}`}
+              >
+                {skill}
+              </span>
+
                 ))}
               </div>
 

@@ -106,15 +106,6 @@
   margin-bottom: 0.75rem;
 }
 
-.tag {
-  display: inline-block;
-  background: #eef2ff;
-  color: var(--primary-color);
-  font-size: var(--font-xs);
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-}
 
 .certMeta {
   display: flex;

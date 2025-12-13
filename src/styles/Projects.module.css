@@ -45,6 +45,7 @@
   box-shadow: 0 10px 15px -5px rgba(154, 0, 2, 0.4);
 }
 
+
 .projectImageContainer {
   padding: 1rem;
   display: flex;
@@ -125,17 +126,84 @@
   margin-bottom: 1rem;
 }
 
+/* Base tag */
 .tag {
-  display: inline-block;
-  background: #f3f4f6;
-  color: var(--subtitle-color);
-  font-size: var(--font-xs); /* larger tags */
-  padding: 0.35rem 1rem;
-  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  border-radius: 9999px;
+  font-size: var(--font-xs);
   font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 }
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ===== Modern Light Technology Tags ===== */
+/* React */
+.tagReact{
+  color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.14);
+  border-color:#0ea5e9;
+}
+/* PHP */
+.tagPHP {
+  color: #6c63ff;
+  background: rgba(108, 99, 255, 0.12);
+}
+
+/* Laravel */
+.tagLaravelPHP {
+  color: #ff2d20;
+  background: rgba(255, 45, 32, 0.12);
+}
+
+/* MySQL */
+.tagMySQL {
+  color: #00758f;
+  background: rgba(0, 117, 143, 0.12);
+}
+
+/* HTML */
+.tagHTML {
+  color: #e34f26;
+  background: rgba(227, 79, 38, 0.12);
+}
+
+/* CSS */
+.tagCSS {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+/* JavaScript */
+.tagJavaScript {
+  color: #b45309;
+  background: rgba(247, 223, 30, 0.18);
+}
+
+/* Bootstrap */
+.tagBootstrap {
+  color: #7952b3;
+  background: rgba(121, 82, 179, 0.12);
+}
+.tagPHP,
+.tagLaravelPHP,
+.tagMySQL,
+.tagHTML,
+.tagCSS,
+.tagJavaScript,
+.tagBootstrap {
+  border: 1px solid currentColor;
+}
+
 
 .projectMeta {
   display: flex;
