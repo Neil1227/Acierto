@@ -97,8 +97,7 @@
   background: transparent;
 }
 
-.statusCompleted,
-.statusProgress {
+.statusCompleted {
   padding: 0.25rem 0.6rem;
   border-radius: 1rem;
   font-size: var(--font-xs); /* larger */
