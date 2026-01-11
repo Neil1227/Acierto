@@ -106,8 +106,9 @@
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
   border: 2px solid transparent;
-  background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
-              linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
+    background:var(--completed-bg);
+  /* background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
+              linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box; */
 }
 
 .description {

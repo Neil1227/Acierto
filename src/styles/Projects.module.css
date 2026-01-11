@@ -103,17 +103,33 @@
   font-size: var(--font-xs); /* larger */
   font-weight: 600;
   border: 2px solid transparent;
-  background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
-              linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
-}
-
-.statusCompleted {
   color: var(--primary-color);
+  background: var(--completed-bg);
+
 }
 
 .statusProgress {
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: var(--font-xs); /* larger */
+  font-weight: 600;
+  border: 2px solid transparent;
   color: var(--mix-color);
+  background: var(--inprogress-bg);
+
 }
+
+.statusDeployment {
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: var(--font-xs); /* larger */
+  font-weight: 600;
+  border: 2px solid transparent;
+  color: var(--deployment-color);
+  background: var(--deployment-bg);
+
+}
+
 
 .projectDescription {
   font-size: var(--font-sm); /* base readable */
@@ -150,7 +166,7 @@
 .tagReact{
   color: #0ea5e9;
   background: rgba(14, 165, 233, 0.14);
-  border-color:#0ea5e9;
+  /* border-color:#0ea5e9; */
 }
 /* PHP */
 .tagPHP {
@@ -193,7 +209,7 @@
   color: #7952b3;
   background: rgba(121, 82, 179, 0.12);
 }
-.tagPHP,
+/* .tagPHP,
 .tagLaravelPHP,
 .tagMySQL,
 .tagHTML,
@@ -201,7 +217,7 @@
 .tagJavaScript,
 .tagBootstrap {
   border: 1px solid currentColor;
-}
+} */
 
 
 .projectMeta {

@@ -24,7 +24,7 @@ const projects = [
     image: "/img/projects/km.jpg",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
-    status: "Inprogress",
+    status: "Deployment",
     duration: "6 months",
     team: "Solo",
     demoUrl: "#",
@@ -39,7 +39,7 @@ const projects = [
     image: "/img/projects/admin-km.jpg",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
-    status: "Inprogress",
+    status: "Development",
     duration: "6 months",
     team: "Solo",
     demoUrl: "#",
@@ -145,11 +145,14 @@ const projects = [
                   className={`${styles.statusBadge} ${
                     project.status === "Completed"
                       ? styles.statusCompleted
+                      : project.status === "Deployment"
+                      ? styles.statusDeployment
                       : styles.statusProgress
                   }`}
                 >
                   {project.status}
                 </span>
+
               </div>
 
 

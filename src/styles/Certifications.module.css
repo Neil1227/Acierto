@@ -81,7 +81,7 @@
   text-transform: uppercase;
 }
 
-.statusCompleted {
+/* .statusCompleted {
   background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
               linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
   color: var(--primary-color);
@@ -91,7 +91,7 @@
   background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box,
               linear-gradient(90deg, var(--primary-color), var(--mix-color)) border-box;
   color: var(--mix-color);
-}
+} */
 
 .certDescription {
   font-size: var(--font-sm);
