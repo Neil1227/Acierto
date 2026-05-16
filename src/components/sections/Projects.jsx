@@ -18,29 +18,29 @@ const projects = [
   
   {
     id: 1,
-    title: "Knowledge Management Unit Website",
+    title: "RIET Website",
     description:
-      "A public-facing website for the Knowledge Management Unit, built with Laravel and MySQL to provide information access and organizational resources.",
-    image: "/img/projects/km.jpg",
+      "A public-facing website for the RIET, built with Laravel and MySQL to provide information access and organizational resources.",
+    image: "/img/projects/mainweb.png",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
     status: "Deployment",
-    duration: "6 months",
+    duration: "1 year",
     team: "Solo",
-    demoUrl: "#",
+    demoUrl: "http://campus.psau.edu.ph:55550/Kamp-Maalam/public/",
     githubUrl: "#", // replace if you have repo
     featured: true,
   },
   {
     id: 2,
-    title: "Knowledge Management Unit Admin",
+    title: "RIET Admin",
     description:
       "Admin dashboard for managing KMU content and data. Includes authentication, content management, and reporting features.",
-    image: "/img/projects/admin-km.jpg",
+    image: "/img/projects/admin.png",
     technologies: ["Laravel PHP", "MySQL","Bootstrap"],
     category: "Web Development",
-    status: "Development",
-    duration: "6 months",
+    status: "Deployment",
+    duration: "1 year",
     team: "Solo",
     demoUrl: "#",
     githubUrl: "#",
