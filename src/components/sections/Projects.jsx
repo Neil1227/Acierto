@@ -19,6 +19,7 @@ const projects = [
   {
     id: 1,
     title: "RIET Website",
+    title: "RIET Website",
     description:
       "A public-facing website for the RIET, built with Laravel and MySQL to provide information access and organizational resources.",
     image: "/img/projects/mainweb.png",
@@ -103,6 +104,21 @@ const projects = [
   duration: "<1 month",
   team: "Solo",
   demoUrl: "https://neil1227.github.io/Portfolio/",
+  githubUrl: "#",
+  featured: false,
+},
+{
+  id: 7,
+  title: "Document Management System",
+  description:
+    "A simple document management system for organizing and storing important files. Built using Laravel PHP and MySQL, with features for uploading, categorizing, and searching documents.",
+  image: "/img/projects/dms.png",
+  technologies: ["Laravel PHP", "MySQL","Bootstrap"],
+  category: "Portfolio",
+  status: "Inprogress",
+  duration: "<1 month",
+  team: "UI/UX Design and Backend",
+  demoUrl: "#",
   githubUrl: "#",
   featured: false,
 }
