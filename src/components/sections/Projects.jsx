@@ -111,7 +111,7 @@ const projects = [
   id: 7,
   title: "Document Management System",
   description:
-    "A simple document management system for organizing and storing important files. Built using Laravel PHP and MySQL, with features for uploading, categorizing, and searching documents.",
+    "A simple UI for document management system for organizing and storing important files. Built using Laravel PHP and MySQL, with features for uploading, categorizing, and searching documents.",
   image: "/img/projects/dms.png",
   technologies: ["Laravel PHP", "MySQL","Bootstrap"],
   category: "Portfolio",
@@ -121,8 +121,22 @@ const projects = [
   demoUrl: "#",
   githubUrl: "#",
   featured: false,
+},
+{
+  id: 8,
+  title: "Sanisip",
+  description:
+    "Designed and developed SaniSip UI, a Progressive Web App that provides real-time campus water quality monitoring through IoT sensor integration. ",
+  image: "/img/projects/sanisip.jpg",
+  technologies: ["HTML", "CSS","JavaScript","Firebase"],
+  category: "Portfolio",
+  status: "Completed",
+  duration: "<1 month",
+  team: "UI",
+  demoUrl: "sanisip.vercel.app",
+  githubUrl: "#",
+  featured: false,
 }
-
 ];
 
   return (
