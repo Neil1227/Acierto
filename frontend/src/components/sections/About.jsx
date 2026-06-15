@@ -29,6 +29,7 @@ const skills = [
   },
 ];
 
+
   return (
     
     <section id="nextSection" className={styles.section}>
