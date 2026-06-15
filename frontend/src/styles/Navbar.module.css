@@ -1,0 +1,247 @@
+/* ------------------ Navbar ------------------ */
+.navbar {
+  position: fixed; /* instead of sticky */
+  top: 10px;
+  left: 10px;
+  right: 10px; 
+
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+
+  border-radius: 1rem;
+
+  /* Softer shadow for depth */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s ease, height 0.3s ease;
+}
+
+/* Scroll effect */
+.navbar.scrolled {
+  background: var(--primary-color);
+  height: 60px;
+
+}
+
+/* ------------------ Logo ------------------ */
+.logo h2 {
+  color: var(--primary-color, #444);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo h2:hover {
+  color: var(--btn-bg-hover-color);
+}
+
+/* When scrolled - force logo text to white */
+.navbar.scrolled .logo h2 {
+  color: #fff;
+}
+
+/* ------------------ Menu ------------------ */
+.menu {
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuItem a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.menuItem a:hover {
+  color: var(--btn-bg-hover-color);
+}
+
+.menuItem a.active {
+  color: var(--btn-bg-hover-color);
+  font-weight: 600;
+}
+
+/* When scrolled - menu links turn white */
+.navbar.scrolled .menuItem a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Desktop only */
+@media (min-width: 769px) {
+  .navbar.scrolled .menuItem a {
+    color: #fff; /* white on scroll for desktop */
+  }
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .navbar.scrolled .menuItem a {
+    color: #000; /* black on scroll for mobile */
+  }
+}
+
+/* Optional: active/hover states on dark bg */
+.navbar.scrolled .menuItem a:hover,
+.navbar.scrolled .menuItem a.active {
+  color: var(--secondary-color, #fff); /* keep it white */
+  text-decoration: none; /* or subtle underline */
+}
+
+/* ------------------ Hamburger ------------------ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  transition: transform 0.3s ease;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background: #444;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* When scrolled - bars turn white */
+.navbar.scrolled .bar {
+  background: #fff;
+}
+
+/* Animate to X with circular rotation first */
+.hamburger.open .bar:nth-child(1) {
+  animation: bar1ToX 0.5s forwards;
+}
+
+.hamburger.open .bar:nth-child(2) {
+  animation: bar2Fade 0.5s forwards;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  animation: bar3ToX 0.5s forwards;
+}
+
+/* Keyframes for first bar */
+@keyframes bar1ToX {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(180deg) translate(0, 0); /* circular rotation */
+  }
+  100% {
+    transform: rotate(45deg) translate(5px, 6px); /* settle into X */
+  }
+}
+
+/* Keyframes for second bar */
+@keyframes bar2Fade {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Keyframes for third bar */
+@keyframes bar3ToX {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-180deg) translate(0, 0); /* circular rotation */
+  }
+  100% {
+    transform: rotate(-45deg) translate(5px, -6px); /* settle into X */
+  }
+}
+
+/* Optional: reverse animation when closing */
+.hamburger:not(.open) .bar:nth-child(1) {
+  animation: bar1ToHamburger 0.5s forwards;
+}
+
+.hamburger:not(.open) .bar:nth-child(2) {
+  animation: bar2Show 0.5s forwards;
+}
+
+.hamburger:not(.open) .bar:nth-child(3) {
+  animation: bar3ToHamburger 0.5s forwards;
+}
+
+@keyframes bar1ToHamburger {
+  0% { transform: rotate(45deg) translate(5px, 6px); }
+  50% { transform: rotate(-180deg) translate(0,0); }
+  100% { transform: rotate(0deg) translate(0,0); }
+}
+
+@keyframes bar2Show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bar3ToHamburger {
+  0% { transform: rotate(-45deg) translate(5px, -6px); }
+  50% { transform: rotate(180deg) translate(0,0); }
+  100% { transform: rotate(0deg) translate(0,0); }
+}
+
+/* ------------------ Mobile Menu ------------------ */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    border: none;
+  }
+/* also explicitly remove outline/border on focus & active */
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menuItem a {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+  /* When scrolled - menu links turn white */
+.navbar.scrolled .menuItem a {
+  color: var(--primary-color);
+}
+
+}

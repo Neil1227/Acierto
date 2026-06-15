@@ -1,0 +1,241 @@
+import styles from "@/styles/Projects.module.css";
+
+import { FaCode, FaClock, FaUsers, FaUser, FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+
+
+const techClassMap = {
+  "PHP": styles.tagPHP,
+  "Laravel PHP": styles.tagLaravelPHP,
+  "MySQL": styles.tagMySQL,
+  "HTML": styles.tagHTML,
+  "CSS": styles.tagCSS,
+  "JavaScript": styles.tagJavaScript,
+  "Bootstrap": styles.tagBootstrap,
+};
+const Projects = () => {
+const projects = [
+  
+  {
+    id: 1,
+    title: "RIET Website",
+    description:
+      "A public-facing website for the RIET, built with Laravel and MySQL to provide information access and organizational resources.",
+    image: "/img/projects/mainweb.png",
+    technologies: ["Laravel PHP", "MySQL","Bootstrap"],
+    category: "Web Development",
+    status: "Deployment",
+    duration: "1 year",
+    team: "Solo",
+    demoUrl: "http://campus.psau.edu.ph:55550/Kamp-Maalam/public/",
+    githubUrl: "#", // replace if you have repo
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "RIET Admin",
+    description:
+      "Admin dashboard for managing KMU content and data. Includes authentication, content management, and reporting features.",
+    image: "/img/projects/admin.png",
+    technologies: ["Laravel PHP", "MySQL","Bootstrap"],
+    category: "Web Development",
+    status: "Deployment",
+    duration: "1 year",
+    team: "Solo",
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    id: 3,
+    title: "Angeles City Vet Adoption System",
+    description:
+      "An adoption system for Angeles City Veterinary Office to help streamline the pet adoption process. Built with PHP and MySQL.",
+    image: "/img/projects/acv.png",
+    technologies: ["PHP", "MySQL","Bootstrap", "JavaScript"],
+    category: "Web Application",
+    status: "Completed",
+    duration: "1 Year",
+    team: "Solo",
+    demoUrl: "https://acv.free.nf",
+    githubUrl: "#",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Angeles City Vet Adoption System Admin",
+    description:
+      "Admin panel for managing adoption applications, pet data, and user information. Provides secure login and data management.",
+    image: "/img/projects/acv-admin.png",
+    technologies: ["PHP", "MySQL","Bootstrap", "JavaScript"],
+    category: "Web Application",
+    status: "Completed",
+    duration: "1 Year",
+    team: "Solo",
+    demoUrl: "https://acv.free.nf/adminLogin.php",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Internship Portfolio",
+    description:
+      "A personal internship portfolio showcasing internship experiences, projects, and skills. Built using static HTML, CSS, and JavaScript.",
+    image: "/img/projects/intern.png",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    category: "Portfolio",
+    status: "Completed",
+    duration: "<1 month",
+    team: "Solo",
+    demoUrl: "https://neil1227.github.io/IT-Internship/",
+    githubUrl: "#",
+    featured: false,
+  },
+{
+  id: 6,
+  title: "First Personal Portfolio",
+  description:
+    "My first personal portfolio, created to showcase my projects, skills, and internship experiences. Built using static HTML, CSS, and JavaScript as a foundation for future development.",
+  image: "/img/projects/portfoliov1.png",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  category: "Portfolio",
+  status: "Completed",
+  duration: "<1 month",
+  team: "Solo",
+  demoUrl: "https://neil1227.github.io/Portfolio/",
+  githubUrl: "#",
+  featured: false,
+},
+{
+  id: 7,
+  title: "Document Management System",
+  description:
+    "A simple UI for document management system for organizing and storing important files. Built using Laravel PHP and MySQL, with features for uploading, categorizing, and searching documents.",
+  image: "/img/projects/dms.png",
+  technologies: ["Laravel PHP", "MySQL","Bootstrap"],
+  category: "Portfolio",
+  status: "Inprogress",
+  duration: "<1 month",
+  team: "UI/UX Design and Backend",
+  demoUrl: "#",
+  githubUrl: "#",
+  featured: false,
+},
+{
+  id: 8,
+  title: "Sanisip",
+  description:
+    "Designed and developed SaniSip UI, a Progressive Web App that provides real-time campus water quality monitoring through IoT sensor integration. ",
+  image: "/img/projects/sanisip.jpg",
+  technologies: ["HTML", "CSS","JavaScript","Firebase"],
+  category: "Portfolio",
+  status: "Completed",
+  duration: "<1 month",
+  team: "UI",
+  demoUrl: "sanisip.vercel.app",
+  githubUrl: "#",
+  featured: false,
+}
+];
+
+  return (
+    <div id="projects" className={styles.projectsPage}>
+    <div className={styles.title}>
+<h1
+  className="mb-3 gradientText mx-auto mb-5"
+  style={{ textAlign: "center" }}
+>
+  Featured Projects:
+</h1>
+
+    </div>
+      <div className={styles.projectsGrid}>
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className={`${styles.projectCard} ${
+              project.featured ? styles.featured : ""
+            }`}
+          >
+          <div className={styles.projectImageContainer}>
+            <img
+              src={project.image}
+              alt={project.title}
+              className={styles.projectImage}
+            />
+          </div>
+
+            <div className={styles.projectContent}>
+              <div className={styles.projectHeader}>
+                <h2 className={styles.projectTitle}>
+                   {project.title}
+                </h2>
+                <span
+                  className={`${styles.statusBadge} ${
+                    project.status === "Completed"
+                      ? styles.statusCompleted
+                      : project.status === "Deployment"
+                      ? styles.statusDeployment
+                      : styles.statusProgress
+                  }`}
+                >
+                  {project.status}
+                </span>
+
+              </div>
+
+
+              <p className={styles.projectDescription}>{project.description}</p>
+
+
+
+          <div className={styles.projectTags}>
+            {project.technologies.map((tech, index) => (
+              <span
+                key={index}
+                className={`${styles.tag} ${techClassMap[tech] || ""}`}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+
+          <div className={styles.projectMeta}>
+            <span className="flex items-center gap-1">
+              <FaClock /> {project.duration}
+            </span>
+            <span className="flex items-center gap-1">
+              {project.team === "Solo" ? <FaUser /> : <FaUsers />} {project.team}
+            </span>
+          </div>
+
+          <div className={styles.projectLinks}>
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.btn} ${styles.demoBtn}`} // custom class for wider button
+                >
+                    <FiExternalLink style={{ marginRight: '0.5rem' }} />
+                  Demo
+                </a>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.btn} ${styles.secondary}`}
+                >
+                  <FaGithub/>
+                  
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

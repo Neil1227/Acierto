@@ -1,0 +1,129 @@
+
+.section {
+  padding: 5rem 5rem;
+  color: var(--text-color); /* dark gray text */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(var(--font-lg), 4vw, var(--font-xl));
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color); /* cherry red titles */
+}
+
+.subtitle {
+  font-size: var(--font-sm);
+  color: var(--subtitle-color);
+  max-width: 48rem;
+  line-height: 1.75rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 📱 Small screens */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* 📱 Extra small (phones under 480px) */
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+
+.card {
+  position: relative;
+  background: var(--secondary-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -5px rgba(154, 0, 2, 0.4);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  font-size: var(--font-lg);
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.cardTitle {
+  font-size: var(--font-md);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.cardDesc {
+  font-size: var(--font-sm);
+  color: var(--subtitle-color);
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  font-size: var(--font-md);
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+  color: var(--primary-color);
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, var(--primary-color), var(--mix-color)) border-box;
+  background-size: 200% 200%;
+  transition: background-position 0.4s ease, transform 0.3s ease;
+}
+
+.iconWrapper svg {
+  transition: color 0.3s ease;
+  color: inherit;
+}
+
+.card:hover .iconWrapper {
+  background-position: right center;
+  transform: scale(1.05);
+}

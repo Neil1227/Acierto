@@ -1,0 +1,68 @@
+:root {
+  /* Golden ratio font scale */
+  --font-xs: 0.62rem;
+  --font-sm: 1rem;
+  --font-lg: 1.62rem;
+
+  /* Button paddings (approx golden ratio) */
+  --btn-padding-sm: 0.38rem 0.77rem; /* ~0.62 * 0.62 */
+  --btn-padding-md: 0.62rem 1rem;    /* base */
+  --btn-padding-lg: 1rem 1.62rem;    /* scaled */
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Sizes */
+.sm {
+  padding: var(--btn-padding-sm);
+  font-size: var(--font-xs);
+}
+
+.md {
+  padding: var(--btn-padding-md);
+  font-size: var(--font-sm);
+}
+
+.lg {
+  padding: var(--btn-padding-lg);
+  font-size: var(--font-lg);
+}
+
+/* Variants */
+.primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--btn-bg-hover-color);
+  color: var(--secondary-color);
+}
+
+.outline {
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.outline:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.secondary {
+  background: #eee;
+  color: #333;
+}
+
+.secondary:hover {
+  background: #ddd;
+}
