@@ -411,9 +411,8 @@
   .imageViewerClose {
     top: 0.75rem;
     right: 0.75rem;
-    width: 46px;
-    height: 46px;
-    font-size: 2rem;
+    width: 26px;
+    font-size: 1rem;
   }
   .imageViewerImage { max-height: 78vh; }
 }
