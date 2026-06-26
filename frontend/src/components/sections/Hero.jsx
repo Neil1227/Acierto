@@ -1,8 +1,6 @@
 // src/components/Hero.jsx
 import Button from "@/components/ui/Button";
 import styles from "@/styles/Hero.module.css";
-import heroImg from "@/assets/img/neil.webp";
-
 
 // Import icons
 import { FaGithub, FaFacebook, FaArrowDown } from "react-icons/fa";
@@ -15,7 +13,7 @@ export default function Hero() {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <h1>
-            Hi! I’m <span>Neil Acierto</span>
+            Hi! I'm <span>Neil Patrick Acierto</span>
           </h1>
           <h2>Full-Stack Developer (Laravel PHP)</h2>
           <p>
@@ -23,30 +21,27 @@ Web developer with experience in responsive design, modern web technologies, and
           </p>
 
           {/* Social links */}
-          <div
-            className={styles.socialLinks}
-            style={{ marginBottom: "20px", display: "flex", gap: "15px" }}
-          >
+          <div className={styles.socialLinks}>
             <a
               href="https://github.com/Neil1227"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub size={30} />
+              <FaGithub size={22} />
             </a>
             <a
               href="https://facebook.com/DncngBlde"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook size={30} />
+              <FaFacebook size={22} />
             </a>
             <a
               href="https://www.indeed.com/profile/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <SiIndeed size={30} />
+              <SiIndeed size={22} />
             </a>
           </div>
 
@@ -61,9 +56,6 @@ Web developer with experience in responsive design, modern web technologies, and
           </div>
         </div>
 
-        <div className={styles.imageWrapper}>
-          <img src={heroImg} alt="Neil Acierto" />
-        </div>
       </div>
 
       {/* Bouncing Arrow */}

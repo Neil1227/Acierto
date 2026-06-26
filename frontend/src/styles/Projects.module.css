@@ -53,12 +53,32 @@
   align-items: center;
 }
 
+.projectImageButton {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.projectImageButton:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
 .projectImage {
   width: 100%;
   height: 180px;
   object-fit: contain;
   border-radius: 0.5rem;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
 
+.projectImageButton:hover .projectImage {
+  transform: scale(1.03);
+  filter: brightness(0.96);
 }
 
 .projectContent {
@@ -275,6 +295,74 @@
 }
 
 /* =========================
+   Image Viewer
+========================= */
+.imageViewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(6, 12, 24, 0.78);
+  backdrop-filter: blur(6px);
+}
+
+.imageViewerContent {
+  position: relative;
+  width: min(94vw, 1100px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.imageViewerClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  width: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(12, 20, 36, 0.92);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.imageViewerClose:hover {
+  transform: scale(1.05);
+  background: var(--primary-color);
+}
+
+.imageViewerImage {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  background: var(--secondary-color);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.imageViewerTitle {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================
    Responsive Styles
 ========================= */
 @media (max-width: 1200px) {
@@ -319,4 +407,13 @@
   .tag { font-size: var(--font-xs); padding: 0.25rem 0.7rem; }
   .btn { font-size: var(--font-sm); padding: 0.45rem 0.9rem; }
   .secondary { font-size: var(--font-md); }
+  .imageViewer { padding: 1rem; }
+  .imageViewerClose {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 46px;
+    height: 46px;
+    font-size: 2rem;
+  }
+  .imageViewerImage { max-height: 78vh; }
 }

@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import styles from "@/styles/Projects.module.css";
 
-import { FaCode, FaClock, FaUsers, FaUser, FaGithub } from "react-icons/fa";
+import { FaClock, FaUsers, FaUser, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 
@@ -14,6 +15,7 @@ const techClassMap = {
   "Bootstrap": styles.tagBootstrap,
 };
 const Projects = () => {
+const [selectedProject, setSelectedProject] = useState(null);
 const projects = [
   
   {
@@ -138,6 +140,24 @@ const projects = [
 }
 ];
 
+useEffect(() => {
+  if (!selectedProject) return;
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      setSelectedProject(null);
+    }
+  };
+
+  document.addEventListener("keydown", handleKeyDown);
+  document.body.style.overflow = "hidden";
+
+  return () => {
+    document.removeEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "";
+  };
+}, [selectedProject]);
+
   return (
     <div id="projects" className={styles.projectsPage}>
     <div className={styles.title}>
@@ -158,11 +178,18 @@ const projects = [
             }`}
           >
           <div className={styles.projectImageContainer}>
-            <img
-              src={project.image}
-              alt={project.title}
-              className={styles.projectImage}
-            />
+            <button
+              type="button"
+              className={styles.projectImageButton}
+              onClick={() => setSelectedProject(project)}
+              aria-label={`View ${project.title} image`}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className={styles.projectImage}
+              />
+            </button>
           </div>
 
             <div className={styles.projectContent}>
@@ -234,6 +261,36 @@ const projects = [
           </div>
         ))}
       </div>
+
+      {selectedProject && (
+        <div
+          className={styles.imageViewer}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${selectedProject.title} image preview`}
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className={styles.imageViewerContent}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className={styles.imageViewerClose}
+              onClick={() => setSelectedProject(null)}
+              aria-label="Close image preview"
+            >
+              &times;
+            </button>
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className={styles.imageViewerImage}
+            />
+            <p className={styles.imageViewerTitle}>{selectedProject.title}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

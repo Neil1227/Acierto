@@ -1,11 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "@/styles/Navbar.module.css";
-import heroImg from "@/assets/img/logo.png";
+import { FaHome, FaUserAlt, FaBriefcase, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
+
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-useEffect(() => {
+  const navLinks = [
+    { href: "#home", label: "Home", icon: <FaHome /> },
+    { href: "#nextSection", label: "About", icon: <FaUserAlt /> },
+    { href: "#career", label: "Career", icon: <FaBriefcase /> },
+    { href: "#projects", label: "Projects", icon: <FaProjectDiagram /> },
+    { href: "#contact", label: "Contact", icon: <FaEnvelope /> },
+  ];
+
+  useEffect(() => {
   const handleScroll = () => {
     const section = document.getElementById("nextSection"); // target section
     if (section) {
@@ -29,34 +37,21 @@ useEffect(() => {
         </h2>
       </div>
 
-      {/* Hamburger Icon */}
-      <button
-        className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
-      >
-        <span className={styles.bar}></span>
-        <span className={styles.bar}></span>
-        <span className={styles.bar}></span>
-      </button>
+      <div className={styles.menu}>
+        {navLinks.map((link) => (
+          <div className={styles.menuItem} key={link.href}>
+            <a href={link.href}>{link.label}</a>
+          </div>
+        ))}
+      </div>
 
-      {/* Menu */}
-      <div className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
-        <div className={styles.menuItem}>
-          <a href="#home">Home</a>
-        </div>
-        <div className={styles.menuItem}>
-          <a href="#nextSection">About</a>
-        </div>
-        <div className={styles.menuItem}>
-          <a href="#career">Career</a>
-        </div>
-        <div className={styles.menuItem}>
-          <a href="#projects">Projects</a>
-        </div>
-        <div className={styles.menuItem}>
-          <a href="#contact">Contact</a>
-        </div>
+      <div className={styles.mobileNav}>
+        {navLinks.map((link) => (
+          <a key={link.href} href={link.href} className={styles.mobileNavItem}>
+            <span className={styles.navIcon}>{link.icon}</span>
+            <span>{link.label}</span>
+          </a>
+        ))}
       </div>
     </nav>
   );

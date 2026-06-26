@@ -21,9 +21,9 @@ const VantaBackground = ({ children, height }) => {
         scaleMobile: 1.1,
         color: 0xffffff,
         backgroundColor: 0x0A7A7A,
-        points: window.innerWidth < 768 ? 8 : 12,
-        maxDistance: window.innerWidth < 768 ? 18 : 22,
-        spacing: window.innerWidth < 768 ? 16 : 20,
+        points: window.innerWidth < 768 ? 10 : 16,
+        maxDistance: window.innerWidth < 768 ? 24 : 32,
+        spacing: window.innerWidth < 768 ? 20 : 28,
         showDots: true,
       });
     }

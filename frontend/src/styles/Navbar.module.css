@@ -54,6 +54,36 @@
   transition: all 0.3s ease-in-out;
 }
 
+.mobileNav {
+  display: none;
+  gap: 1rem;
+  width: 100%;
+}
+
+.mobileNavItem {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.25rem;
+  text-decoration: none;
+  color: #444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 1rem;
+}
+
+.mobileNavItem:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--btn-bg-hover-color);
+}
+
+.navIcon {
+  font-size: 1.2rem;
+}
+
 .menuItem a {
   display: flex;
   flex-direction: row;
@@ -208,40 +238,44 @@
 
 /* ------------------ Mobile Menu ------------------ */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    border: none;
+  .navbar {
+    top: auto;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.5rem;
+    height: auto;
   }
-/* also explicitly remove outline/border on focus & active */
-.hamburger:focus,
-.hamburger:active {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-  .menu {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 220px;
-    flex-direction: column;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 1rem;
+
+  .logo {
     display: none;
   }
 
-  .menu.open {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .mobileNav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .menuItem a {
-    padding: 0.75rem 0;
-    font-size: 1rem;
+  .mobileNavItem {
+    flex: 1;
+    min-width: 0;
   }
-  /* When scrolled - menu links turn white */
-.navbar.scrolled .menuItem a {
-  color: var(--primary-color);
-}
 
+  .mobileNavItem span:last-child {
+    font-size: 0.7rem;
+  }
+
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+  }
 }
