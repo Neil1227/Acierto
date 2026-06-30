@@ -84,6 +84,12 @@
   font-size: 1.2rem;
 }
 
+.desktopNavIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
 .menuItem a {
   display: flex;
   flex-direction: row;

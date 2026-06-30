@@ -40,7 +40,10 @@ export default function Navbar() {
       <div className={styles.menu}>
         {navLinks.map((link) => (
           <div className={styles.menuItem} key={link.href}>
-            <a href={link.href}>{link.label}</a>
+            <a href={link.href}>
+              <span className={styles.desktopNavIcon}>{link.icon}</span>
+              <span>{link.label}</span>
+            </a>
           </div>
         ))}
       </div>
